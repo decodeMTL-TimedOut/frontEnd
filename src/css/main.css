@@ -1,0 +1,33 @@
+.main-page {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main-page h2 {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.main-page-gamelist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.main-page-gamelist li {
+  list-style: none;
+  text-decoration: none;
+  width: 150px;
+  height: 200px;
+  margin: 1em;
+  border: 3px solid black;
+  padding: 0.5em;
+  text-align: center;
+  color: red;
+}
+
+.main-page-gamelist a {
+  color: blue;
+  text-decoration: none;
+}
