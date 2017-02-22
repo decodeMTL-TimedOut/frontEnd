@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import './css/search-bar.css';
 import './css/main.css';
+import './css/game.css';
 
 import SearchBar from './components/SearchBar';
 
@@ -19,7 +20,7 @@ class App extends Component {
           {this.props.children}
         </div>
         <div className="footer">
-          <p>This is the footer area. Leave me alone. I will reach the bottom eventually!</p>
+          <p>&copy; 2017 TimedOut</p>
         </div>
       </div>
     )

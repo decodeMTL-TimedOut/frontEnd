@@ -13,7 +13,6 @@ Why are we doing this instead of using a <Link>? The answer is straightforward, 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-
         // Why do we need to do this?? Make sure you understand!!!
         this._handleSubmit = this._handleSubmit.bind(this);
   }
@@ -24,15 +23,13 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-        <div className="search-bar">
-          <div className="search-bar-logo">
-            <img src=""/>
-          </div>
-          <form onSubmit={this._handleSubmit}>
-            <input ref="userInput" className="search-page__input" type="text" placeholder="Enter anything you want!" />
-            {/* <button className="search-page__button">Search</button> */}
-          </form>
-        </div>
+      <div className="search-bar">
+        <Link to="/"><img className="search-bar-logo" src="https://image.flaticon.com/icons/png/512/61/61972.png"/></Link>
+        <form className="search-bar-form" onSubmit={this._handleSubmit}>
+          <input ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
+          <button className="search-bar-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png" /></button>
+        </form>
+      </div>
     );
   }
 };

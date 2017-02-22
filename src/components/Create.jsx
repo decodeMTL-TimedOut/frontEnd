@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class Create extends React.Component {
   render() {
     return (
-      <div>
+      <div className="party-create">
         <h4>Create Page</h4>
         <p>Enter parameters for your party:</p>
         <button><Link to="/game/party">Confirm</Link></button>

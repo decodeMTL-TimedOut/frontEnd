@@ -1,0 +1,128 @@
+.game-page {
+  margin:0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+}
+
+.game-page-information {
+  z-index: 7;
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 200px;
+  width: 100%;
+}
+
+.game-page-information-art {
+  display: flex;
+  width: 40%;
+}
+
+.game-page-information-art img {
+  max-width: 100%;
+  height: auto;
+  background-repeat: repeat-y;
+}
+
+.game-page-information-description {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.game-page-information-description-title {
+  height: 15%;
+  width: 100%;
+}
+
+.game-page-information-description-title h1 {
+  color: white;
+  font-style: italic;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.game-page-information-description-info {
+  height: 65%;
+  width: 100%;
+}
+
+.game-page-information-description-info p {
+  padding: 0em 1em;
+  color: white;
+  font-size: 0.9em;
+}
+
+.game-page-information-description-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+}
+
+.game-page-information-description-link a {
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  font-size: 1.25em;
+  color: dodgerblue;
+}
+
+.partylist {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  width: 95%;
+  height: 80px;
+  background-color: transparent;
+}
+
+.partylist-party {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.partylist-party-info {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+
+.partylist-party-title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.partylist-party-other {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.partylist-party-other-info {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 33%;
+  flex-wrap: nowrap;
+}
+
+.partylist-party-view {
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  display: flex;
+}
