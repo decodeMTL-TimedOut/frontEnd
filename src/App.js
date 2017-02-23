@@ -7,6 +7,8 @@ import './css/game.css';
 import './css/partylist.css';
 import './css/react-datetime.css';
 import './css/partycompose.css';
+import './css/party.css';
+import './css/partymember.css';
 
 import SearchBar from './components/SearchBar';
 

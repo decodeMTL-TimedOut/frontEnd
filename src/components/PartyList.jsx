@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class PartyList extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+
+    };
+  }
   render() {
     return (
       <div className="party-list">

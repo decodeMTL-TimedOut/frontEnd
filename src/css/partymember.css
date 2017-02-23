@@ -1,0 +1,46 @@
+.party-member-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.party-member-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin: 0.5em 0em;
+}
+
+.party-member-info-role {
+  display: flex;
+  width: 30%;
+}
+
+.party-member-info-name {
+  display: flex;
+  width: 60%;
+}
+
+.party-member-remove {
+  text-align: right;
+  width: 10%;
+}
+
+.party-member-remove img {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5em;
+  opacity: 0.5;
+}
+
+.party-view-users-breaker {
+  border: 0.25px solid white;
+  opacity: 0.5;
+  margin: 0.5em 0em;
+}
+
+.party-member-info-breaker {
+  border: 0.1px solid white;
+  opacity: 0.15;
+  margin: 0.1em 0em;
+}

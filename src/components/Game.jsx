@@ -4,6 +4,13 @@ import { Link } from 'react-router';
 import PartyList from './PartyList';
 
 class Game extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+
+    };
+  }
   render() {
     return (
       <div className="game-page">

@@ -1,16 +1,70 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+var moment = require('moment');
+var Datetime = require('react-datetime');
+
+var date = new Date();
+
 class Edit extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+
+    };
+  }
+
   render() {
     return (
-      <div>
-        <h4>Edit Page</h4>
-        <p>Edit parameters for your created party!</p>
-        <button><Link to="/game/party">Confirm</Link></button>
-        <button>Cancel</button>
-        <button>Delete</button>
+    <div className="party-compose">
+      <div className="party-compose-base">
+        <p>EDIT PARTY</p>
+        <div className="party-compose-base-title">
+          <p>Title</p>
+          <input type="text" placeholder="Enter your game name"/>
+        </div>
+        <div className="party-compose-base-party">
+          <p>Number of Players</p>
+          <select>
+            <option>Select Number</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div className="party-compose-base-time">
+          <span>Start Time</span>
+          <Datetime />
+        </div>
+        <div className="party-compose-base-time">
+          <span>End Time</span>
+          <Datetime />
+        </div>
       </div>
+      <div className="party-compose-tag">
+        <span>LVL</span>
+        <span>RAID</span>
+        <span>PRO</span>
+        <span>BGN</span>
+        <span>EXP</span>
+        <span>PVP</span>
+        <span>PVE</span>
+        <span>FARM</span>
+      </div>
+      <div className="party-compose-decision">
+        <span className="party-compose-decision-confirm">CONFIRM</span>
+        <span className="party-compose-decision-cancel">CANCEL</span>
+        <span className="party-compose-decision-delete">DELETE</span>
+      </div>
+    </div>
     )
   }
 }

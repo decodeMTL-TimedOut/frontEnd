@@ -53,9 +53,12 @@
 }
 
 .game-page-information-description-info p {
-  padding: 0em 1em;
+  padding: 0em 1.25em;
   color: white;
   font-size: 0.9em;
+  height: 100px;
+  line-height: 1.35em;
+  text-overflow: hidden;
 }
 
 .game-page-information-description-link {
