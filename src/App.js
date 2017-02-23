@@ -4,6 +4,9 @@ import './css/App.css';
 import './css/search-bar.css';
 import './css/main.css';
 import './css/game.css';
+import './css/partylist.css';
+import './css/react-datetime.css';
+import './css/partycompose.css';
 
 import SearchBar from './components/SearchBar';
 

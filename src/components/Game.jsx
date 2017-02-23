@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import PartyList from './PartyList.jsx';
+import PartyList from './PartyList';
 
 class Game extends React.Component {
   render() {
@@ -29,6 +29,8 @@ class Game extends React.Component {
             </div>
           </div>
         </div>
+        <PartyList />
+        <PartyList />
         <PartyList />
         <PartyList />
         <PartyList />

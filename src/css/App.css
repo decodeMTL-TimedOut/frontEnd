@@ -24,8 +24,8 @@
 }*/
 
 .footer {
-  padding: 0.25em;
-  background-color: grey;
+  padding:0.1em;
+  background-color: rgba(40,40,40,1);
   color: white;
   text-align: center;
 }
