@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
+import AuthService from '../utils/AuthService';
 
 
 class Login extends React.Component {
   render() {
+    const { auth } = this.props.route;
     return (
       <div className="login-page">
         <h2>Login Page</h2>
-        <form>
-          <input type="text" placeholder="Enter your username"></input>
-          <input type="text" placeholder="Enter your password"></input>
-          <button type="submit">Submit</button>
-        </form>
+        <button className="loginButton" onClick={auth.login.bind(this)}>Login</button>
       </div>
     )
   }
