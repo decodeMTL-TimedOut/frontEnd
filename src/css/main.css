@@ -1,6 +1,9 @@
 .main-page {
+  display: flex;
   margin-top: 75px;
   text-align: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .main-page h2 {
@@ -11,9 +14,7 @@
 
 .main-page-gamelist {
   display: flex;
-  flex-direction: row;
-  flex-wrap:wrap;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .main-page-gamelist li {
@@ -26,6 +27,9 @@
   padding: 0.5em;
   text-align: center;
   color: red;
+}
+
+.main-page-gamelist img {
 }
 
 .main-page-gamelist a {

@@ -14,6 +14,28 @@ class Edit extends React.Component {
     };
   }
 
+  changeNumOfPlayers(event){
+    this.setState({
+      value: event.target.value
+    });
+  }
+
+  handleClickConfirm() {
+    this.props.onClickConfirm();
+  }
+
+  handleClickCancel() {
+    this.props.onClickCancel();
+  }
+
+  handleClickDelete(event) {
+    this.props.onClickDelete();
+  }
+
+  handleClickTag() {
+
+  }
+
   render() {
     return (
     <div className="party-compose">
@@ -25,7 +47,7 @@ class Edit extends React.Component {
         </div>
         <div className="party-compose-base-party">
           <p>Number of Players</p>
-          <select>
+          <select onChange={this.changeNumOfPlayers.bind(this)} value={this.state.value}>
             <option>Select Number</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -49,19 +71,19 @@ class Edit extends React.Component {
         </div>
       </div>
       <div className="party-compose-tag">
-        <span>LVL</span>
-        <span>RAID</span>
-        <span>PRO</span>
-        <span>BGN</span>
-        <span>EXP</span>
-        <span>PVP</span>
-        <span>PVE</span>
-        <span>FARM</span>
+        <span onClick={this.handleClickTag.bind(this)}>LVL</span>
+        <span onClick={this.handleClickTag.bind(this)}>RAID</span>
+        <span onClick={this.handleClickTag.bind(this)}>PRO</span>
+        <span onClick={this.handleClickTag.bind(this)}>BGN</span>
+        <span onClick={this.handleClickTag.bind(this)}>EXP</span>
+        <span onClick={this.handleClickTag.bind(this)}>PVP</span>
+        <span onClick={this.handleClickTag.bind(this)}>PVE</span>
+        <span onClick={this.handleClickTag.bind(this)}>FARM</span>
       </div>
       <div className="party-compose-decision">
-        <span className="party-compose-decision-confirm">CONFIRM</span>
-        <span className="party-compose-decision-cancel">CANCEL</span>
-        <span className="party-compose-decision-delete">DELETE</span>
+        <span className="party-compose-decision-confirm" onClick={this.handleClickConfirm.bind(this)}>CONFIRM</span>
+        <span className="party-compose-decision-cancel" onClick={this.handleClickCancel.bind(this)}>CANCEL</span>
+        <span className="party-compose-decision-delete" onClick={this.handleClickDelete.bind(this)}>DELETE</span>
       </div>
     </div>
     )

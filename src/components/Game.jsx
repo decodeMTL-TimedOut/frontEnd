@@ -2,7 +2,6 @@ import React from 'react';
 
 import PartyList from './PartyList';
 import Party from './Party';
-import Edit from './Edit';
 import Create from './Create';
 
 class Game extends React.Component {
@@ -10,20 +9,37 @@ class Game extends React.Component {
     super();
 
     this.state = {
-      party: ''
+      createFormClosed: true
     };
   }
 
   handleClick(event) {
     event.preventDefault();
 
+    if (this.state.createFormClosed === true) {
+      this.setState({
+        createFormClosed: false
+      })
+    }
+  }
+
+  onClickCancel_Create(){
     this.setState({
-      party: 'create'
+      createFormClosed: true
     })
   }
 
-  
+  onClickConfirm_Create() {
+    this.setState({
+      createFormClosed: true
+    })
+  }
 
+  onClickDelete_Create() {
+    this.setState({
+      createFormClosed: true
+    })
+  }
 
   render() {
     return (
@@ -46,19 +62,22 @@ class Game extends React.Component {
               <p>Overwatch ended the crisis, and helped maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
             </div>
             <div className="game-page-information-description-link">
-              <span onClick={this.handleClick.bind(this)}>Create Party</span>
+              <span className="game-page-information-ON" onClick={this.handleClick.bind(this)}>Create Party</span>
             </div>
           </div>
         </div>
+        { !this.state.createFormClosed  ?
+          <Create
+            onClickCancel={this.onClickCancel_Create.bind(this)}
+            onClickConfirm={this.onClickConfirm_Create.bind(this)}
+            onClickDelete={this.onClickDelete_Create.bind(this)}
+          />  : null }
         <PartyList />
         <PartyList />
         <PartyList />
         <PartyList />
         <PartyList />
         <PartyList />
-        <Party />
-        <Edit />
-        <Create />
       </div>
     )
   }

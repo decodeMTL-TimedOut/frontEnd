@@ -8,6 +8,7 @@ class PartyMember extends React.Component {
 
     };
   }
+  
   render() {
     return(
       <div className="party-member-list">

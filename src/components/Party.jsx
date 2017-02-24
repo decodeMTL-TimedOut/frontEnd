@@ -8,8 +8,27 @@ class Party extends React.Component {
     super();
 
     this.state = {
-
     };
+  }
+
+  handleClickJoin(){
+    this.props.onClickJoin();
+  }
+
+  handleClickEdit(){
+    this.props.onClickEdit();
+  }
+
+  handleClickLeave(){
+    this.props.onClickLeave();
+  }
+
+  handleClickCancel(){
+    this.props.onClickCancel();
+  }
+
+  handleClickStart(){
+    this.props.onClickStart();
   }
 
   render() {
@@ -23,19 +42,16 @@ class Party extends React.Component {
             <span className="party-view-breaker"></span>
             <div className="party-view-box-content">insert game name</div>
           </div>
-
           <div className="party-view-info-size">
             <div className="party-view-box-title">PARTY SIZE</div>
             <span className="party-view-breaker"></span>
             <div className="party-view-box-content">insert party size number</div>
           </div>
-
           <div className="party-view-info-time">
             <div className="party-view-box-title">START TIME</div>
             <span className="party-view-breaker"></span>
             <div className="party-view-box-content">insert start time here</div>
           </div>
-
           <div className="party-view-info-time">
             <div className="party-view-box-title">END TIME</div>
             <span className="party-view-breaker"></span>
@@ -46,31 +62,13 @@ class Party extends React.Component {
           <span>PARTY MEMBERS</span>
           <span className="party-view-users-breaker"></span>
           <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
-          <PartyMember />
         </div>
         <div className="party-view-decision">
-          <span className="party-view-decision-join">
-            <Link to="/game">JOIN</Link>
-          </span>
-          <span className="party-view-decision-leave">
-            <Link to="/game">LEAVE</Link>
-          </span>
-          <span className="party-view-decision-edit">
-            <Link to="/game/edit">EDIT</Link>
-          </span>
-          <span className="party-view-decision-start">
-            <Link to="/">START</Link>
-          </span>
+          <span className="party-view-decision-join" onClick={this.handleClickJoin.bind(this)}>JOIN</span>
+          <span className="party-view-decision-leave" onClick={this.handleClickLeave.bind(this)}>LEAVE</span>
+          <span className="party-view-decision-edit" onClick={this.handleClickEdit.bind(this)}>EDIT</span>
+          <span className="party-view-decision-cancel" onClick={this.handleClickCancel.bind(this)}>CANCEL</span>
+          <span className="party-view-decision-start" onClick={this.handleClickStart.bind(this)}>START</span>
         </div>
       </div>
     )

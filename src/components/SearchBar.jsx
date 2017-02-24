@@ -14,19 +14,45 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
         // Why do we need to do this?? Make sure you understand!!!
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state={
+          currentInput: ""
+        }
   }
-  handleSubmit(event) {
-    event.preventDefault();
-        // history.push(`/user/${this.refs.userInput.value}`)
+
+  handleInput(event){
+    var value = event.target.value;
+    this.setState({
+      currentInput: value
+    });
+  }
+
+  handleSubmit() {
+
+    // var value = this.refs.userInput.value;
+    //     // history.push(`/user/${this.refs.userInput.value}`)
+    // console.log(value)
+  }
+
+  componentDidMount() {
+    var url = `https://api.github.com/users/${this.props.user}`; //get back to me on this when you get here
+    var that = this;
+    fetch(url)
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            that.setState({
+              userData: json
+      });
+    });
   }
 
   render() {
+    console.log(this.state.currentInput)
     return (
       <div className="search-bar">
         <Link to="/"><img className="search-bar-logo" src="https://image.flaticon.com/icons/png/512/61/61972.png" alt=""/></Link>
-        <form className="search-bar-form" onSubmit={this.handleSubmit}>
-          <input ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
+        <form className="search-bar-form" onSubmit={this.handleSubmit.bind(this)}>
+          <input onInput={this.handleInput.bind(this)} ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
           <button className="search-bar-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png" alt=""/></button>
         </form>
       </div>

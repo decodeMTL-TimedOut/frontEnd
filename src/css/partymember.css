@@ -33,6 +33,12 @@
   opacity: 0.5;
 }
 
+.party-view-users {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .party-view-users-breaker {
   border: 0.25px solid white;
   opacity: 0.5;
