@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
-
 
 class PartyMember extends React.Component {
   constructor() {
     super();
-    
+
     this.state ={
 
     };
@@ -17,9 +15,7 @@ class PartyMember extends React.Component {
           <div className="party-member-info-role">Leader</div>
           <div className="party-member-info-name">Member_User_Name</div>
           <div className="party-member-remove">
-            <Link to="/game/party">
-              <img src="/img/remove50x50.png"/>
-            </Link>
+            <img src="/img/remove50x50.png" alt=""/>
           </div>
         </div>
         <span className="party-member-info-breaker"></span>

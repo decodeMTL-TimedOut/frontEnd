@@ -127,11 +127,11 @@ span.party-compose-decision-confirm {
   width: 25%;
   height: 50px;
   color: white;
-  /*background: #008a00; /* Old browsers */
-  /*background: -moz-linear-gradient(-15deg, #008a00 70%, #20d820 73%, #008a00 100%); /* FF3.6-15 */
-  /*background: -webkit-linear-gradient(-15deg, #008a00 70%,#20d820 73%,#008a00 100%); /* Chrome10-25,Safari5.1-6 */
-  /*background: linear-gradient(165deg, #008a00 70%,#20d820 73%,#008a00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008a00', endColorstr='#008a00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /*background: #008a00;
+  background: -moz-linear-gradient(-15deg, #008a00 70%, #20d820 73%, #008a00 100%);
+  background: -webkit-linear-gradient(-15deg, #008a00 70%,#20d820 73%,#008a00 100%);
+  background: linear-gradient(165deg, #008a00 70%,#20d820 73%,#008a00 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008a00', endColorstr='#008a00',GradientType=1 ); */
 }
 
 span.party-compose-decision-cancel {
@@ -144,12 +144,11 @@ span.party-compose-decision-cancel {
   height: 50px;
   width: 25%;
   color: white;
-  /*background: #ff0000; /* Old browsers */
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff0000+67,ff5959+68,ff2323+100 */
-  /*background: -moz-linear-gradient(-25deg, #ff0000 63%, #FF2121 64%, #ff2323 100%); /* FF3.6-15 */
-  /*background: -webkit-linear-gradient(-25deg, #ff0000 63%,#FF2121 64%,#ff2323 100%); /* Chrome10-25,Safari5.1-6 */
-  /*background: linear-gradient(155deg, #ff0000 63%,#FF2121 64%,#ff2323 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff2323',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /*background: #ff0000;
+  background: -moz-linear-gradient(-25deg, #ff0000 63%, #FF2121 64%, #ff2323 100%);
+  background: -webkit-linear-gradient(-25deg, #ff0000 63%,#FF2121 64%,#ff2323 100%);
+  background: linear-gradient(155deg, #ff0000 63%,#FF2121 64%,#ff2323 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#ff2323',GradientType=1 ); */
 }
 
 span.party-compose-decision-delete {

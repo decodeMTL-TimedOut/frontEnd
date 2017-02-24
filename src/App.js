@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
+
+import './css/index.css';
 import './css/App.css';
 import './css/search-bar.css';
 import './css/main.css';
@@ -16,12 +17,8 @@ class App extends Component {
   render() {
     return (
       <div className="main-header">
-        {/* <h2>Timed Out Project</h2>
-        <div className="main-link"> */}
-        {/* <h1><Link to="/">Go to Home Page</Link></h1> */}
-        {/* </div> */}
         <div className="main-content">
-          <SearchBar/>
+          <SearchBar />
           {this.props.children}
         </div>
         <div className="footer">

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+
+import Party from './Party';
+import Edit from './Edit';
 
 class PartyList extends React.Component {
   constructor() {
@@ -9,6 +11,11 @@ class PartyList extends React.Component {
 
     };
   }
+
+  handleClick(event) {
+    event.preventDefault();
+  }
+
   render() {
     return (
       <div className="party-list">
@@ -20,12 +27,12 @@ class PartyList extends React.Component {
             <div className="party-list-party-players">
               <div className="party-list-party-players-box">
                 <span>2</span>
-                <img src="/img/member50x50.png"/>
+                <img src="/img/member50x50.png" alt=""/>
                 <span className="party-list-party-players-small">need</span>
               </div>
               <div className="party-list-party-players-box">
                 <span>5</span>
-                <img src="/img/party50x50.png"/>
+                <img src="/img/party50x50.png" alt=""/>
                 <span className="party-list-party-players-small">max</span>
               </div>
             </div>
@@ -39,9 +46,7 @@ class PartyList extends React.Component {
             </div>
           </div>
           <div className="party-list-party-view">
-            <Link to="/game/party">
-              <img src="/img/arrow.png"/>
-            </Link>
+            <img src="/img/arrow.png" onClick={this.handleClick.bind(this)}/>
           </div>
         </div>
       </div>

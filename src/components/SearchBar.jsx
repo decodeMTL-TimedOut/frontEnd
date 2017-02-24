@@ -14,20 +14,20 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
         // Why do we need to do this?? Make sure you understand!!!
-        this._handleSubmit = this._handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
   }
-  _handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
         // history.push(`/user/${this.refs.userInput.value}`)
   }
 
   render() {
     return (
       <div className="search-bar">
-        <Link to="/"><img className="search-bar-logo" src="https://image.flaticon.com/icons/png/512/61/61972.png"/></Link>
-        <form className="search-bar-form" onSubmit={this._handleSubmit}>
+        <Link to="/"><img className="search-bar-logo" src="https://image.flaticon.com/icons/png/512/61/61972.png" alt=""/></Link>
+        <form className="search-bar-form" onSubmit={this.handleSubmit}>
           <input ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
-          <button className="search-bar-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png" /></button>
+          <button className="search-bar-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png" alt=""/></button>
         </form>
       </div>
     );

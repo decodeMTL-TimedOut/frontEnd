@@ -1,16 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 import PartyList from './PartyList';
+import Party from './Party';
+import Edit from './Edit';
+import Create from './Create';
 
 class Game extends React.Component {
   constructor() {
     super();
 
     this.state = {
-
+      party: ''
     };
   }
+
+  handleClick(event) {
+    event.preventDefault();
+
+    this.setState({
+      party: 'create'
+    })
+  }
+
   render() {
     return (
       <div className="game-page">
@@ -32,7 +43,7 @@ class Game extends React.Component {
               <p>Overwatch ended the crisis, and helped maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
             </div>
             <div className="game-page-information-description-link">
-              <Link to="/game/create">Create Party</Link>
+              <span onClick={this.handleClick.bind(this)}>Create Party</span>
             </div>
           </div>
         </div>
@@ -42,9 +53,9 @@ class Game extends React.Component {
         <PartyList />
         <PartyList />
         <PartyList />
-        <PartyList />
-        <PartyList />
-        {this.props.children}
+        <Party />
+        <Edit />
+        <Create />
       </div>
     )
   }

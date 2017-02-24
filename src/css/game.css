@@ -58,7 +58,8 @@
   font-size: 0.9em;
   height: 100px;
   line-height: 1.35em;
-  text-overflow: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .game-page-information-description-link {
@@ -66,14 +67,16 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 20%;
 }
 
-.game-page-information-description-link a {
-  background-color: transparent;
-  text-decoration: none;
-  outline: none;
-  border: none;
-  font-size: 1.25em;
-  color: dodgerblue;
+.game-page-information-description-link span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 1.05em;
+  width: 160px;
+  height: 50px;
+  border-radius: 10px;
 }
