@@ -52,25 +52,25 @@ class Game extends React.Component {
     })
   }
 
-
+  //     var Parent = React.createClass({
+  //   getInitialState: function() {
+  //     return {highlighted: false};
+  //   },
+  //   render: function() {
+  //     var className = 'card' + (this.state.highlighted ? ' highlighted' : '');
+  //     return (
+  //       <div className={className}>
+  //         <EditableTextarea onClick={this.toggleHighlight} />
+  //       </div>
+  //     );
+  //   },
+  //   toggleHighlight: function() {
+  //     this.setState({highlighted: !this.state.highlighted});
+  //   },
+  // });
 
   render() {
-//     var Parent = React.createClass({
-//   getInitialState: function() {
-//     return {highlighted: false};
-//   },
-//   render: function() {
-//     var className = 'card' + (this.state.highlighted ? ' highlighted' : '');
-//     return (
-//       <div className={className}>
-//         <EditableTextarea onClick={this.toggleHighlight} />
-//       </div>
-//     );
-//   },
-//   toggleHighlight: function() {
-//     this.setState({highlighted: !this.state.highlighted});
-//   },
-// });
+
     var className_Create = "game-page-information-button" + (this.state.createButtonPressed ? "-pressed" : '');
 
     return (
@@ -100,12 +100,12 @@ class Game extends React.Component {
             onClickConfirm={this.onClickConfirm_Create.bind(this)}
             onClickDelete={this.onClickDelete_Create.bind(this)}
           />  : null }
-        <PartyList userId="hyowon19"/>
-        <PartyList userId="bryanLeBlanc"/>
-        <PartyList userId="terminator33"/>
-        <PartyList userId="bubba"/>
-        <PartyList userId="juked09"/>
-        <PartyList userId="someoneAwesome56"/>
+        <PartyList userId="hyowon19" member="true"/>
+        <PartyList userId="bryanLeBlanc" member="true"/>
+        <PartyList userId="terminator33" member="false"/>
+        <PartyList userId="bubba" member="false"/>
+        <PartyList userId="juked09" member="false"/>
+        <PartyList userId="someoneAwesome56" member="true"/>
       </div>
     )
   }

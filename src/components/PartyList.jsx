@@ -10,94 +10,108 @@ class PartyList extends React.Component {
     this.state = {
       partyFormClosed: true,
       editFormClosed: true,
-      isLeader: false
+      isLeader: false,
+      isMember: false
     };
-
-
   }
 
   handleClick() {
     if (this.state.partyFormClosed === true) {
-      this.setState({
+      this.setState ({
         partyFormClosed: false
       })
     }
   }
 
   onClickBack_Party(){
-    this.setState({
+    this.setState ({
       partyFormClosed: true
     })
   }
 
   onClickEdit_Party() {
-    this.setState({
+    this.setState ({
       partyFormClosed: true,
       editFormClosed: false
     })
   }
 
   onClickStart_Party() {
-    this.setState({
+    this.setState ({
       partyFormClosed: true
     })
   }
 
   onClickDelete_Party() {
-    this.setState({
+    this.setState ({
       partyFormClosed: true
     })
   }
 
   onClickJoin_Party() {
-    this.setState({
+    this.setState ({
       partyFormClosed: true
     })
   }
 
   onClickLeave_Party() {
-    this.setState({
+    this.setState ({
       partyFormClosed: true
     })
   }
 
   onClickConfirm_Edit(){
-    this.setState({
+    this.setState ({
       editFormClosed: true,
       partyFormClosed: false
     })
   }
 
   onClickBack_Edit(){
-    this.setState({
+    this.setState ({
       editFormClosed: true,
       partyFormClosed: false
     })
   }
 
   onClickDelete_Edit(){
-    this.setState({
+    this.setState ({
       editFormClosed: true,
       partyFormClosed: false
     })
   }
 
-//   isLeader_Party() {
-// var userId = this.props.userId;
-//     if(userId === "hyowon19") {
-//       this.setState({
-//         isLeader: true
-//       })
-//     }
-//   }
+  isLeader_Party() {
+    var userId = this.props.userId;
+    if(userId === "hyowon19") {
+      this.setState ({
+        isLeader: true
+      })
+    }
+  }
+
+  isMember_Party() {
+    var partyMember = this.props.member;
+    if(partyMember === "true") {
+      this.setState ({
+        isMember: true
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.isLeader_Party();
+    this.isMember_Party();
+  }
 
   render() {
 
-    // console.log(this.props.userId)
-    // console.log(this.state.isLeader)
+    console.log("The user Id is the creator:" , this.props.userId ? this.props.userId : "not yet set")
+    console.log(this.state.isLeader)
+    console.log("The user Id is a member: ", this.props.member ? this.props.userId : "not yet set")
+    console.log(this.state.isMember)
     return (
       <div>
-
         <div className="party-list">
           <div className="party-list-party">
             <div className="party-list-party-info">
@@ -133,7 +147,8 @@ class PartyList extends React.Component {
         </div>
         { !this.state.partyFormClosed ?
           <Party
-            checkIsLeader={this.isLeader_Party.bind(this)}
+            checkIsLeader={this.state.isLeader}
+            checkIsMember={this.state.isMember}
             onClickBack={this.onClickBack_Party.bind(this)}
             onClickEdit={this.onClickEdit_Party.bind(this)}
             onClickStart={this.onClickStart_Party.bind(this)}

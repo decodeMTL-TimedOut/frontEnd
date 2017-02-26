@@ -64,6 +64,16 @@
   margin: 2em 0em;
 }
 
+.party-view-creator {
+  display: flex;
+  flex-direction: row;
+}
+
+.party-view-member {
+  display: flex;
+  flex-direction: row;
+}
+
 .party-view-decision a {
   color: white;
   text-decoration: none;

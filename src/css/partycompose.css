@@ -94,6 +94,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  width: 90%;
 }
 
 /*.party-compose-tag>span {
@@ -114,7 +115,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -126,7 +127,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -139,7 +140,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -151,7 +152,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -164,7 +165,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -176,7 +177,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -189,7 +190,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -201,7 +202,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -214,7 +215,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -226,7 +227,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -239,7 +240,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -251,7 +252,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -264,7 +265,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -276,7 +277,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -289,7 +290,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
@@ -301,11 +302,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  width: 17.5%;
   height: 40px;
   color: white;
   background-color: dodgerblue;
   opacity: 0.25;
+}
+
+.party-compose-preview {
+  margin: 2em 0em;
+  color: white;
+  width: 85%;
+  border: 1px solid white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.party-compose-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30%
+}
+
+.party-compose-preview-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 35%;
+}
+
+.party-compose-preview-tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 35%;
 }
 
 .party-compose-decision {
