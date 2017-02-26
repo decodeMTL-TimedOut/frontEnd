@@ -96,7 +96,7 @@
   justify-content: center;
 }
 
-.party-compose-tag>span {
+/*.party-compose-tag>span {
   margin: 0.5em;
   padding: 0.25em;
   display: flex;
@@ -106,6 +106,206 @@
   height: 40px;
   color: white;
   background-color: dodgerblue;
+}*/
+
+.party-tag-lvl {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-lvl-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-raid {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-raid-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-pro {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-pro-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-bgn {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-bgn-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-exp {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-exp-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-pvp {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-pvp-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-pve {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-pve-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
+}
+
+.party-tag-farm {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+}
+
+.party-tag-farm-pressed {
+  margin: 0.5em;
+  padding: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 40px;
+  color: white;
+  background-color: dodgerblue;
+  opacity: 0.25;
 }
 
 .party-compose-decision {

@@ -9,8 +9,11 @@ class PartyList extends React.Component {
 
     this.state = {
       partyFormClosed: true,
-      editFormClosed: true
+      editFormClosed: true,
+      isLeader: false
     };
+
+
   }
 
   handleClick() {
@@ -21,7 +24,7 @@ class PartyList extends React.Component {
     }
   }
 
-  onClickCancel_Party(){
+  onClickBack_Party(){
     this.setState({
       partyFormClosed: true
     })
@@ -31,6 +34,12 @@ class PartyList extends React.Component {
     this.setState({
       partyFormClosed: true,
       editFormClosed: false
+    })
+  }
+
+  onClickStart_Party() {
+    this.setState({
+      partyFormClosed: true
     })
   }
 
@@ -52,9 +61,43 @@ class PartyList extends React.Component {
     })
   }
 
+  onClickConfirm_Edit(){
+    this.setState({
+      editFormClosed: true,
+      partyFormClosed: false
+    })
+  }
+
+  onClickBack_Edit(){
+    this.setState({
+      editFormClosed: true,
+      partyFormClosed: false
+    })
+  }
+
+  onClickDelete_Edit(){
+    this.setState({
+      editFormClosed: true,
+      partyFormClosed: false
+    })
+  }
+
+//   isLeader_Party() {
+// var userId = this.props.userId;
+//     if(userId === "hyowon19") {
+//       this.setState({
+//         isLeader: true
+//       })
+//     }
+//   }
+
   render() {
+
+    // console.log(this.props.userId)
+    // console.log(this.state.isLeader)
     return (
       <div>
+
         <div className="party-list">
           <div className="party-list-party">
             <div className="party-list-party-info">
@@ -83,22 +126,26 @@ class PartyList extends React.Component {
               </div>
             </div>
             <div className="party-list-party-view">
-              <img src="/img/arrow.png" onClick={this.handleClick.bind(this)}/>
+              <img src="/img/arrow.png" alt="" onClick={this.handleClick.bind(this)}/>
             </div>
           </div>
 
         </div>
         { !this.state.partyFormClosed ?
           <Party
-            onClickCancel={this.onClickCancel_Party.bind(this)}
+            checkIsLeader={this.isLeader_Party.bind(this)}
+            onClickBack={this.onClickBack_Party.bind(this)}
             onClickEdit={this.onClickEdit_Party.bind(this)}
-            onClickStart={this.onClickDelete_Party.bind(this)}
+            onClickStart={this.onClickStart_Party.bind(this)}
+            onClickDelete={this.onClickDelete_Party.bind(this)}
             onClickJoin={this.onClickJoin_Party.bind(this)}
             onClickLeave={this.onClickLeave_Party.bind(this)}
           />  : null }
         { !this.state.editFormClosed ?
           <Edit
-            
+            onClickBack={this.onClickBack_Edit.bind(this)}
+            onClickConfirm={this.onClickConfirm_Edit.bind(this)}
+            onClickDelete={this.onClickDelete_Edit.bind(this)}
           /> : null}
       </div>
 

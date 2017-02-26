@@ -31,8 +31,8 @@ const routes = (
       <Route path="/login" component={Login} auth={auth}/>
       <Route path="/profile" component={Profile} onEnter={requireAuth} auth={auth}/>
       <Route path="/" component={App} onEnter={requireAuth} auth={auth} >
-        <IndexRoute component={Main} onEnter={requireAuth} auth={auth} /> {/*signup/login*/}
-        <Route path="game" component={Game} onEnter={requireAuth} auth={auth} > {/*game listing page / user news/home page*/}
+        <IndexRoute component={Main} onEnter={requireAuth} auth={auth} />
+        <Route path="game" component={Game} onEnter={requireAuth} auth={auth} >
           <Route path="create" component={Create} onEnter={requireAuth} auth={auth}/>
         </Route>
       </Route>

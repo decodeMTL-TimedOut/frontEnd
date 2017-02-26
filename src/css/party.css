@@ -70,7 +70,7 @@
 }
 
 .party-view-decision-join {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,7 +83,7 @@
 }
 
 .party-view-decision-leave {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@
 }
 
 .party-view-decision-edit {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,8 +108,21 @@
   border-radius: 3px;
 }
 
-.party-view-decision-cancel {
-  margin: 0em 1em;
+.party-view-decision-delete {
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  background-color: orangered;
+  width: 85px;
+  height: 40px;
+  color: white;
+  border-radius: 3px;
+}
+
+.party-view-decision-back {
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +135,7 @@
 }
 
 .party-view-decision-start {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;

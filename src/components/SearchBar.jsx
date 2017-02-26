@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit() {
-
+    
     // var value = this.refs.userInput.value;
     //     // history.push(`/user/${this.refs.userInput.value}`)
     // console.log(value)

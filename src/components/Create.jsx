@@ -10,7 +10,17 @@ class Create extends React.Component {
     super();
 
     this.state = {
-
+      lvlPressed: false,
+      raidPressed: false,
+      proPressed: false,
+      bgnPressed: false,
+      expPressed: false,
+      pvpPressed: false,
+      pvePressed: false,
+      farmPressed: false,
+      deleteButtonPressed: false,
+      backButtonPressed: false,
+      confirmButtonPressed: false
     };
   }
 
@@ -24,31 +34,77 @@ class Create extends React.Component {
     this.props.onClickConfirm();
   }
 
-  handleClickCancel() {
-    this.props.onClickCancel();
+  handleClickBack() {
+    this.props.onClickBack();
   }
 
   handleClickDelete(event) {
     this.props.onClickDelete();
   }
 
-  handleClickTag() {
-    
+  handleClickTag_lvl() {
+    this.setState({
+      lvlPressed: !this.state.lvlPressed
+    })
+  }
+
+  handleClickTag_raid() {
+    this.setState({
+      raidPressed: !this.state.raidPressed
+    })
+  }
+
+  handleClickTag_pro() {
+    this.setState({
+      proPressed: !this.state.proPressed
+    })
+  }
+
+  handleClickTag_bgn() {
+    this.setState({
+      bgnPressed: !this.state.bgnPressed
+    })
+  }
+
+  handleClickTag_exp() {
+    this.setState({
+      expPressed: !this.state.expPressed
+    })
+  }
+
+  handleClickTag_pvp() {
+    this.setState({
+      pvpPressed: !this.state.pvpPressed
+    })
+  }
+
+  handleClickTag_pve() {
+    this.setState({
+      pvePressed: !this.state.pvePressed
+    })
+  }
+
+  handleClickTag_farm() {
+    this.setState({
+      farmPressed: !this.state.farmPressed
+    })
   }
 
   setDate(time) {
     console.log(time);
   }
 
-  // setStartTime(time) {
-  //   console.log(time);
-  // }
-  //
-  // setEndTime(time) {
-  //   console.log(time);
-  // }
-
   render() {
+
+    var tagLevel = "party-tag-lvl" + (this.state.lvlPressed ? "-pressed" : '');
+    var tagRaid = "party-tag-raid" + (this.state.raidPressed ? "-pressed" : '');
+    var tagPro = "party-tag-pro" + (this.state.proPressed ? "-pressed" : '');
+    var tagBgn = "party-tag-bgn" + (this.state.bgnPressed ? "-pressed" : '');
+    var tagExp = "party-tag-exp" + (this.state.expPressed ? "-pressed" : '');
+    var tagPvp = "party-tag-pvp" + (this.state.pvpPressed ? "-pressed" : '');
+    var tagPve = "party-tag-pve" + (this.state.pvePressed ? "-pressed" : '');
+    var tagFarm = "party-tag-farm" + (this.state.farmPressed ? "-pressed" : '');
+
     return (
     <div className="party-compose">
       <div className="party-compose-base">
@@ -83,18 +139,18 @@ class Create extends React.Component {
         </div>
       </div>
       <div className="party-compose-tag">
-        <span onClick={this.handleClickTag.bind(this)}>LVL</span>
-        <span onClick={this.handleClickTag.bind(this)}>RAID</span>
-        <span onClick={this.handleClickTag.bind(this)}>PRO</span>
-        <span onClick={this.handleClickTag.bind(this)}>BGN</span>
-        <span onClick={this.handleClickTag.bind(this)}>EXP</span>
-        <span onClick={this.handleClickTag.bind(this)}>PVP</span>
-        <span onClick={this.handleClickTag.bind(this)}>PVE</span>
-        <span onClick={this.handleClickTag.bind(this)}>FARM</span>
+        <div className={tagLevel} onClick={this.handleClickTag_lvl.bind(this)}>LVL</div>
+        <div className={tagRaid} onClick={this.handleClickTag_raid.bind(this)}>RAID</div>
+        <div className={tagPro} onClick={this.handleClickTag_pro.bind(this)}>PRO</div>
+        <div className={tagBgn} onClick={this.handleClickTag_bgn.bind(this)}>BGN</div>
+        <div className={tagExp} onClick={this.handleClickTag_exp.bind(this)}>EXP</div>
+        <div className={tagPvp} onClick={this.handleClickTag_pvp.bind(this)}>PVP</div>
+        <div className={tagPve} onClick={this.handleClickTag_pve.bind(this)}>PVE</div>
+        <div className={tagFarm} onClick={this.handleClickTag_farm.bind(this)}>FARM</div>
       </div>
       <div className="party-compose-decision">
         <span className="party-compose-decision-confirm" onClick={this.handleClickConfirm.bind(this)}>CONFIRM</span>
-        <span className="party-compose-decision-cancel" onClick={this.handleClickCancel.bind(this)}>CANCEL</span>
+        <span className="party-compose-decision-cancel" onClick={this.handleClickBack.bind(this)}>BACK</span>
         <span className="party-compose-decision-delete" onClick={this.handleClickDelete.bind(this)}>DELETE</span>
       </div>
     </div>
