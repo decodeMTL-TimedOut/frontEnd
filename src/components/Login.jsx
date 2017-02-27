@@ -8,8 +8,12 @@ class Login extends React.Component {
     const { auth } = this.props.route;
     return (
       <div className="login-page">
-        <h2>Login Page</h2>
-        <button className="loginButton" onClick={auth.login.bind(this)}>Login</button>
+        {/* <h2>Login Page</h2> */}
+        <div className="login-logo">
+          <img src="./img/TimedOut.svg" alt="" />
+        </div>
+        <span className="login-spacer"></span>
+        <button className="login-button" onClick={auth.login.bind(this)}>LOGIN</button>
       </div>
     )
   }

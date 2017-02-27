@@ -58,7 +58,7 @@ class Create extends React.Component {
     })
     if(!this.state.lvlPressed === true) {
       this.setState ({
-        lvlValue: "LVL "
+        lvlValue: "#LVL "
       })
     }
     else {
@@ -74,7 +74,7 @@ class Create extends React.Component {
     })
     if(!this.state.raidPressed === true) {
       this.setState ({
-        raidValue: "RAID "
+        raidValue: "#RAID "
       })
     }
     else {
@@ -90,7 +90,7 @@ class Create extends React.Component {
     })
     if(!this.state.proPressed === true) {
       this.setState ({
-        proValue: "PRO "
+        proValue: "#PRO "
       })
     }
     else {
@@ -106,7 +106,7 @@ class Create extends React.Component {
     })
     if(!this.state.bgnPressed === true) {
       this.setState ({
-        bgnValue: "BGN "
+        bgnValue: "#BGN "
       })
     }
     else {
@@ -122,7 +122,7 @@ class Create extends React.Component {
     })
     if(!this.state.expPressed === true) {
       this.setState ({
-        expValue: "EXP "
+        expValue: "#EXP "
       })
     }
     else {
@@ -138,7 +138,7 @@ class Create extends React.Component {
     })
     if(!this.state.pvpPressed === true) {
       this.setState ({
-        pvpValue: "PVP "
+        pvpValue: "#PVP "
       })
     }
     else {
@@ -154,7 +154,7 @@ class Create extends React.Component {
     })
     if(!this.state.pvePressed === true) {
       this.setState ({
-        pveValue: "PVE "
+        pveValue: "#PVE "
       })
     }
     else {
@@ -170,7 +170,7 @@ class Create extends React.Component {
     })
     if(!this.state.farmPressed === true) {
       this.setState ({
-        farmValue: "FARM "
+        farmValue: "#FARM "
       })
     }
     else {

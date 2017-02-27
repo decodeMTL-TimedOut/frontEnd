@@ -10,6 +10,7 @@ import './css/react-datetime.css';
 import './css/partycompose.css';
 import './css/party.css';
 import './css/partymember.css';
+import './css/login.css';
 
 import SearchBar from './components/SearchBar';
 
