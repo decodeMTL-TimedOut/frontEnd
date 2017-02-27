@@ -1,0 +1,121 @@
+.example-enter {
+  font-size: 12px;
+  transition: font-size 0.5s ease-out;
+}
+
+.example-enter.example-enter-active {
+    font-size: 1em;
+}
+
+.example-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+}
+
+.example-appear {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.example-appear.example-appear-active {
+  opacity: 1;
+}
+
+
+
+
+
+.exampleLogo-enter {
+  font-size: 12px;
+  transition: font-size 0.5s ease-out;
+}
+
+.exampleLogo-enter.example-enter-active {
+    font-size: 1em;
+}
+
+.exampleLogo-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.exampleLogo-leave.example-leave-active {
+  opacity: 0.01;
+}
+
+.exampleLogo-appear {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.exampleLogo-appear.example-appear-active {
+  opacity: 1;
+}
+
+
+
+
+
+
+.exampleSpacer-enter {
+  font-size: 12px;
+  transition: font-size 0.5s ease-out;
+}
+
+.exampleSpacer-enter.example-enter-active {
+    font-size: 1em;
+}
+
+.exampleSpacer-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.exampleSpacer-leave.example-leave-active {
+  opacity: 0.01;
+}
+
+.exampleSpacer-appear {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.exampleSpacer-appear.example-appear-active {
+  opacity: 1;
+}
+
+
+
+
+
+
+.exampleButton-enter {
+  font-size: 12px;
+  transition: font-size 0.5s ease-out;
+}
+
+.exampleButton-enter.example-enter-active {
+    font-size: 1em;
+}
+
+.exampleButton-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.exampleButton-leave.example-leave-active {
+  opacity: 0.01;
+}
+
+.exampleButton-appear {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.exampleButton-appear.example-appear-active {
+  opacity: 1;
+}

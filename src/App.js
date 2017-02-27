@@ -11,6 +11,7 @@ import './css/partycompose.css';
 import './css/party.css';
 import './css/partymember.css';
 import './css/login.css';
+import './css/example.css';
 
 import SearchBar from './components/SearchBar';
 

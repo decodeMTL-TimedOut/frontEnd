@@ -4,26 +4,130 @@ import { Link } from 'react-router';
 
 import GameID from './GameID';
 
+var c9 = 'https://timedout-leblancbryan.c9users.io/'
+var cors = 'https://cors-anywhere.herokuapp.com/'
+
+var url = `${cors}${c9}main`;
+
 class Main extends React.Component {
   constructor() {
     super();
 
     this.state = {
+      gamedata: []
     };
   }
 
+  //regular get
+  // componentDidMount() {
+  //
+  //   var that = this;
+  //   fetch(url)
+  //     .then( (response) => {
+  //       return response.json() })
+  //         .then( (json) => {
+  //           that.setState({
+  //             gamedata: json.result
+  //           });
+  //   });
+  // }
+
+  componentDidMount() {
+    fetch(url)
+      .then(response => response.json())
+      .then(
+        gamedata => {
+          this.setState ({
+            gamedata: gamedata.result
+          })
+        }
+      )
+  }
+
+  // fetch(`https://api.github.com/users/${this.props.params.username}/repos?access_token=${key}`)
+  //   .then(response => response.json())
+  //   .then(
+  //     repos => {
+  //             // How can we use `this` inside a callback without binding it??
+  //             // Make sure you understand this fundamental difference with arrow functions!!!
+  //       this.setState({
+  //         repos: repos
+  //       });
+  //     }
+  //   );
+
   render() {
+    console.log(this.state.gamedata)
+    const gameData = this.state.gamedata;
     return (
       <div className="main-page">
-        <GameID />
-        <GameID />
-        <GameID />
+        {gameData ? gameData.map((gamedata) => <GameID gameData={gamedata} key={gamedata.gameId}/>) : null}
       </div>
     )
   }
 }
 
 export default Main;
+
+// {repos.map((repos) => <GitHubRepo user={repos} key={repos.id}/>)} */
+// /* <GameID />
+
+
+  // 1.when fetch happens:
+  // on click, componentDidMount
+  // 2. if post, make a payload
+  // 3. var that=this
+  // 4. fetch
+
+
+
+
+
+//post
+// componentDidMount() {
+//   var payload = {
+//     userId: this.state.profile.user_id
+//   }
+//   var data = new FormData();
+//   data.append("json", JSON.stringify(payload));
+//    //get back to me on this when you get here
+//   var that = this;
+//   fetch(url, {
+//     method: 'POST',
+//     body: data
+//   })
+//     .then( (response) => {
+//       return response.json() })
+//         .then( (json) => {
+//           that.setState({
+//             gamedata: json
+//           });
+//   });
+// }
+//regular get
+// componentDidMount() {
+//   var url = `https://timedout-leblancbryan.c9users.io/main`; //get back to me on this when you get here
+//   var that = this;
+//   fetch(url)
+//     .then( (response) => {
+//       return response.json() })
+//         .then( (json) => {
+//           that.setState({
+//             gamedata: json
+//           });
+//   });
+// }
+
+
+//   fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/<YOUR API KEY HERE>/37.8267,-122.4233')
+// .then(response => response.json())
+// .then(data => console.log(data))
+
+
+
+
+
+
       // <div className="main-page">
       //   <ul className="main-page-gamelist">
       //     <li>

@@ -2,14 +2,11 @@ import React from 'react';
 import { browserHistory as history } from 'react-router';
 import { Link } from 'react-router';
 
-/*
-This component displays a form where the user can enter a GitHub username
-When they submit the form either by pressing ENTER or clicking the button,
-we will use react-router's history.push function to push a new URL to the history.
+var c9 = 'https://timedout-leblancbryan.c9users.io/'
+var cors = 'https://cors-anywhere.herokuapp.com/'
 
-This will have as an effect to navigate to a new URL, which will display the User component
-Why are we doing this instead of using a <Link>? The answer is straightforward, but make sure you understand!!!
-*/
+var url = `${cors}${c9}main`;
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -19,40 +16,49 @@ class SearchBar extends React.Component {
         }
   }
 
-  handleInput(event){
+  handleInput_SearchBar(event){
     var value = event.target.value;
     this.setState({
       currentInput: value
     });
   }
 
+
   handleSubmit() {
-    
-    // var value = this.refs.userInput.value;
-    //     // history.push(`/user/${this.refs.userInput.value}`)
-    // console.log(value)
+
+
   }
 
   componentDidMount() {
-    var url = `https://api.github.com/users/${this.props.user}`; //get back to me on this when you get here
+    var payload = {
+      userId: this.state.profile.user_id
+    }
+    var data = new FormData();
+    data.append("json", JSON.stringify(payload));
+     //get back to me on this when you get here
     var that = this;
-    fetch(url)
+    fetch(url, {
+      method: 'POST',
+      body: data
+    })
       .then( (response) => {
         return response.json() })
           .then( (json) => {
             that.setState({
-              userData: json
-      });
+              gamedata: json
+            });
     });
   }
+
+
 
   render() {
     console.log(this.state.currentInput)
     return (
       <div className="search-bar">
-        <Link to="/"><img className="search-bar-logo" src="https://image.flaticon.com/icons/png/512/61/61972.png" alt=""/></Link>
+        <Link to="/"><img className="search-bar-logo" src="./img/TimedOutLetter.png" alt=""/></Link>
         <form className="search-bar-form" onSubmit={this.handleSubmit.bind(this)}>
-          <input onInput={this.handleInput.bind(this)} ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
+          <input onInput={this.handleInput_SearchBar.bind(this)} ref="userInput" className="search-bar-input" type="text" placeholder="Enter anything you want!" />
           <button className="search-bar-button"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png" alt=""/></button>
         </form>
       </div>
