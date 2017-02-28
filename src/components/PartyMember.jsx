@@ -5,10 +5,9 @@ class PartyMember extends React.Component {
     super();
 
     this.state ={
-
     };
   }
-  
+
   render() {
     return(
       <div className="party-member-list">

@@ -5,138 +5,104 @@ var Datetime = require('react-datetime');
 
 var date = new Date();
 
+var c9 = 'https://timedout-leblancbryan.c9users.io/'
+var cors = 'https://cors-anywhere.herokuapp.com/'
+
+var baseUrl = `${cors}${c9}`;
+
+var url = "";
+
 class Create extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      lvlPressed: false,
-      raidPressed: false,
-      proPressed: false,
-      bgnPressed: false,
-      expPressed: false,
-      pvpPressed: false,
-      pvePressed: false,
-      farmPressed: false,
-      lvlValue: "",
-      raidValue: "",
-      proValue: "",
-      bgnValue: "",
-      expValue: "",
+      pvp: false,
+      pve: false,
+      exp: false,
+      farm: false,
+      pro: false,
+      noob: false,
+      comp: false,
+      casual: false,
       pvpValue: "",
       pveValue: "",
+      expValue: "",
       farmValue: "",
-      deleteButtonPressed: false,
+      proValue: "",
+      noobValue: "",
+      compValue: "",
+      casualValue: "",
+      // deleteButtonPressed: false,
       backButtonPressed: false,
       confirmButtonPressed: false,
-      currentInputTitle: ""
-      // currentPressedTags: ""
+      currentInputTitle: "",
+      numOfPlayers: "",
+      endTime: "",
+      startTime: ""
     };
   }
 
   changeNumOfPlayers(event){
     this.setState({
-      value: event.target.value
+      numOfPlayers: event.target.value
     });
   }
 
   handleClickConfirm() {
     this.props.onClickConfirm();
+    // i need to initiate the payload from here
+    if(this.state.confirmButtonPressed === true) {
+      var payload = {
+        // userId: this.state.profile.user_id,
+        gameTitle: this.state.gameTitle,
+        numOfPlayers: this.state.numOfPlayers,
+        startTime: this.state.startTime,
+        endTime: this.state.endTime,
+        pvp: this.state.pvp,
+        pve: this.state.pve,
+        exp: this.state.exp,
+        farm: this.state.farm,
+        pro: this.state.pro,
+        noob: this.state.noob,
+        comp: this.state.comp,
+        casual: this.state.casual,
+        startTime: this.state.startTime,
+        endTime: this.state.endTime
+      }
+      var data = new FormData();
+      data.append("json", JSON.stringify(payload));
+       //get back to me on this when you get here
+
+      fetch(url, {
+        method: 'POST',
+        body: data
+      })
+        .then( (response) => {
+          return response.json() })
+            .then( (json) => {
+              this.setState({
+                gamedata: json
+              });
+            });
+    }
   }
 
   handleClickBack() {
     this.props.onClickBack();
   }
 
-  handleClickDelete(event) {
-    this.props.onClickDelete();
-  }
 
-  handleClickTag_lvl() {
-    this.setState({
-      lvlPressed: !this.state.lvlPressed
-    })
-    if(!this.state.lvlPressed === true) {
-      this.setState ({
-        lvlValue: "#LVL "
-      })
-    }
-    else {
-      this.setState ({
-        lvlValue: ""
-      })
-    }
-  }
-
-  handleClickTag_raid() {
-    this.setState({
-      raidPressed: !this.state.raidPressed
-    })
-    if(!this.state.raidPressed === true) {
-      this.setState ({
-        raidValue: "#RAID "
-      })
-    }
-    else {
-      this.setState ({
-        raidValue: ""
-      })
-    }
-  }
-
-  handleClickTag_pro() {
-    this.setState({
-      proPressed: !this.state.proPressed
-    })
-    if(!this.state.proPressed === true) {
-      this.setState ({
-        proValue: "#PRO "
-      })
-    }
-    else {
-      this.setState ({
-        proValue: ""
-      })
-    }
-  }
-
-  handleClickTag_bgn() {
-    this.setState({
-      bgnPressed: !this.state.bgnPressed
-    })
-    if(!this.state.bgnPressed === true) {
-      this.setState ({
-        bgnValue: "#BGN "
-      })
-    }
-    else {
-      this.setState ({
-        bgnValue: ""
-      })
-    }
-  }
-
-  handleClickTag_exp() {
-    this.setState({
-      expPressed: !this.state.expPressed
-    })
-    if(!this.state.expPressed === true) {
-      this.setState ({
-        expValue: "#EXP "
-      })
-    }
-    else {
-      this.setState ({
-        expValue: ""
-      })
-    }
-  }
+  // wrong place for this one, this is only for DELETE in the EDIT PARTY section
+  // handleClickDelete(event) {
+  //   this.props.onClickDelete();
+  // }
 
   handleClickTag_pvp() {
     this.setState({
-      pvpPressed: !this.state.pvpPressed
+      pvp: !this.state.pvp
     })
-    if(!this.state.pvpPressed === true) {
+    if(!this.state.pvp === true) {
       this.setState ({
         pvpValue: "#PVP "
       })
@@ -150,9 +116,9 @@ class Create extends React.Component {
 
   handleClickTag_pve() {
     this.setState({
-      pvePressed: !this.state.pvePressed
+      pve: !this.state.pve
     })
-    if(!this.state.pvePressed === true) {
+    if(!this.state.pve === true) {
       this.setState ({
         pveValue: "#PVE "
       })
@@ -164,24 +130,114 @@ class Create extends React.Component {
     }
   }
 
+  handleClickTag_exp() {
+    this.setState({
+      exp: !this.state.exp
+    })
+    if(!this.state.exp === true) {
+      this.setState ({
+        expValue: "#EXP "
+      })
+    }
+    else {
+      this.setState ({
+        expValue: ""
+      })
+    }
+  }
+
   handleClickTag_farm() {
     this.setState({
-      farmPressed: !this.state.farmPressed
+      farm: !this.state.farm
     })
-    if(!this.state.farmPressed === true) {
+    if(!this.state.farm === true) {
       this.setState ({
         farmValue: "#FARM "
       })
     }
-    else {
+    else{
       this.setState ({
         farmValue: ""
       })
     }
   }
 
-  setDate(time) {
-    console.log(time);
+  handleClickTag_pro() {
+    this.setState({
+      pro: !this.state.pro
+    })
+    if(!this.state.pro === true) {
+      this.setState ({
+        proValue: "#PRO "
+      })
+    }
+    else {
+      this.setState ({
+        proValue: ""
+      })
+    }
+  }
+
+  handleClickTag_noob() {
+    this.setState({
+      noob: !this.state.noob
+    })
+    if(!this.state.noob === true) {
+      this.setState ({
+        noobValue: "#NOOB "
+      })
+    }
+    else {
+      this.setState ({
+        noobValue: ""
+      })
+    }
+  }
+
+  handleClickTag_comp() {
+    this.setState({
+      comp: !this.state.comp
+    })
+    if(!this.state.comp === true) {
+      this.setState ({
+        compValue: "#COMP "
+      })
+    }
+    else {
+      this.setState ({
+        compValue: ""
+      })
+    }
+  }
+
+  handleClickTag_casual() {
+    this.setState({
+      casual: !this.state.casual
+    })
+    if(!this.state.casual === true) {
+      this.setState ({
+        casualValue: "#CASUAL "
+      })
+    }
+    else {
+      this.setState ({
+        casualValue: ""
+      })
+    }
+  }
+
+  setStartTime(startTime) {
+    console.log("The startTime you selected is: ", startTime._d);
+    this.setState ({
+      startTime: startTime._d
+    })
+  }
+
+  setEndTime(endTime) {
+    console.log("The endtime you selected is: ", endTime._d);
+    this.setState ({
+      endTime: endTime._d
+    })
   }
 
   handleInput_Title(event) {
@@ -191,164 +247,21 @@ class Create extends React.Component {
     })
   }
 
-  // tagValue_lvl() {
-  //   if(this.state.lvlPressed) {
-  //     this.setState ({
-  //       lvlValue: "LVL "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       lvlValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_raid() {
-  //   if(this.state.raidPressed) {
-  //     this.setState ({
-  //       raidValue: "RAID "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       raidValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_pro() {
-  //   if(this.state.proPressed) {
-  //     this.setState ({
-  //       proValue: "PRO "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       proValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_bgn() {
-  //   if(this.state.bgnPressed) {
-  //     this.setState ({
-  //       bgnValue: "BGN "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       bgnValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_exp() {
-  //   if(this.state.expPressed) {
-  //     this.setState ({
-  //       expValue: "EXP "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       expValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_pvp() {
-  //   if(this.state.pvpPressed) {
-  //     this.setState ({
-  //       pvpValue: "PVP "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       pvpValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_pve() {
-  //   if(this.state.pvePressed) {
-  //     this.setState ({
-  //       pveValue: "PVE "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       pveValue: ""
-  //     })
-  //   }
-  // }
-  //
-  // tagValue_farm() {
-  //   var farm = this.state.farmPressed;
-  //   if(farm === true) {
-  //     this.setState ({
-  //       farmValue: "FARM "
-  //     })
-  //   }
-  //   else {
-  //     this.setState ({
-  //       farmValue: ""
-  //     })
-  //   }
-  // }
-
-  // componentDidMount() {
-    // console.log(this.state.farmPressed)
-    // // var farm = this.state.farmPressed;
-    // if(this.state.farmPressed === true) {
-    //   this.setState ({
-    //     farmValue: "FARM "
-    //   })
-    // }
-    // else  {
-    //   this.setState ({
-    //     farmValue: ""
-    //   })
-    // }
-    // console.log("inside mount" + this.state.farmValue)
-    // if(3) {
-    //   this.setState ({
-    //     farmValue: "FARM "
-    //   })
-    //   console.log("if true then " +this.state.farmValue)
-    // }
-    //
-    // else {
-    //   this.setState ({
-    //     farmValue: ""
-    //   })
-    // }
-    // this.tagValue_lvl();
-    // this.tagValue_raid();
-    // this.tagValue_pro();
-    // this.tagValue_bgn();
-    // this.tagValue_exp();
-    // this.tagValue_pvp();
-    // this.tagValue_pve();
-    // this.tagValue_farm();
-  // }
 
   render() {
     var gameTitle = this.state.currentInputTitle;
-    var tagsPressed = this.state.lvlValue + this.state.raidValue + this.state.proValue + this.state.bgnValue + this.state.expValue + this.state.pvpValue + this.state.pveValue + this.state.farmValue;
+    var tagsPressed = this.state.pvpValue + this.state.pveValue + this.state.expValue + this.state.farmValue + this.state.proValue + this.state.noobValue + this.state.compValue + this.state.casualValue;
 
-    var gameName = gameTitle + " " + tagsPressed;
+    // var gameName = gameTitle + " " + tagsPressed;
 
-    // console.log("farm is "+this.state.farmPressed);
-    // console.log(this.state.farmValue);
-    // console.log(this.state.currentInputTitle)
-    var tagLevel = "party-tag-lvl" + (this.state.lvlPressed ? "-pressed" : '');
-    var tagRaid = "party-tag-raid" + (this.state.raidPressed ? "-pressed" : '');
-    var tagPro = "party-tag-pro" + (this.state.proPressed ? "-pressed" : '');
-    var tagBgn = "party-tag-bgn" + (this.state.bgnPressed ? "-pressed" : '');
-    var tagExp = "party-tag-exp" + (this.state.expPressed ? "-pressed" : '');
-    var tagPvp = "party-tag-pvp" + (this.state.pvpPressed ? "-pressed" : '');
-    var tagPve = "party-tag-pve" + (this.state.pvePressed ? "-pressed" : '');
-    var tagFarm = "party-tag-farm" + (this.state.farmPressed ? "-pressed" : '');
+    var tagPvp = "party-tag-pvp" + (this.state.pvp ? "-pressed" : '');
+    var tagPve = "party-tag-pve" + (this.state.pve ? "-pressed" : '');
+    var tagExp = "party-tag-exp" + (this.state.exp ? "-pressed" : '');
+    var tagFarm = "party-tag-farm" + (this.state.farm ? "-pressed" : '');
+    var tagPro = "party-tag-pro" + (this.state.pro ? "-pressed" : '');
+    var tagNoob = "party-tag-noob" + (this.state.noob ? "-pressed" : '');
+    var tagComp = "party-tag-comp" + (this.state.comp ? "-pressed" : '');
+    var tagCasual = "party-tag-casual" + (this.state.casual ? "-pressed" : '');
 
     return (
     <div className="party-compose">
@@ -376,29 +289,29 @@ class Create extends React.Component {
         </div>
         <div className="party-compose-base-time">
           <span>Start Time</span>
-          <Datetime onChange={this.setDate.bind(this)}/>
+          <Datetime onChange={this.setStartTime.bind(this)} Datetime dateFormat="YYYY-MM-DD" timeFormat={true}/>
         </div>
         <div className="party-compose-base-time">
           <span>End Time</span>
-          <Datetime onChange={this.setDate.bind(this)}/>
+          <Datetime onChange={this.setEndTime.bind(this)} Datetime dateFormat="YYYY-MM-DD" timeFormat={true}/>
         </div>
       </div>
       <div className="party-compose-tag">
-        <div className={tagLevel} onClick={this.handleClickTag_lvl.bind(this)}>LVL</div>
-        <div className={tagRaid} onClick={this.handleClickTag_raid.bind(this)}>RAID</div>
-        <div className={tagPro} onClick={this.handleClickTag_pro.bind(this)}>PRO</div>
-        <div className={tagBgn} onClick={this.handleClickTag_bgn.bind(this)}>BGN</div>
-        <div className={tagExp} onClick={this.handleClickTag_exp.bind(this)}>EXP</div>
-        <div className={tagPvp} onClick={this.handleClickTag_pvp.bind(this)}>PVP</div>
-        <div className={tagPve} onClick={this.handleClickTag_pve.bind(this)}>PVE</div>
-        <div className={tagFarm} onClick={this.handleClickTag_farm.bind(this)}>FARM</div>
+        <div className={tagPvp} onClick={this.handleClickTag_pvp.bind(this)}>#PVP</div>
+        <div className={tagPve} onClick={this.handleClickTag_pve.bind(this)}>#PVE</div>
+        <div className={tagExp} onClick={this.handleClickTag_exp.bind(this)}>#EXP</div>
+        <div className={tagFarm} onClick={this.handleClickTag_farm.bind(this)}>#FARM</div>
+        <div className={tagPro} onClick={this.handleClickTag_pro.bind(this)}>#PRO</div>
+        <div className={tagNoob} onClick={this.handleClickTag_noob.bind(this)}>#NOOB</div>
+        <div className={tagComp} onClick={this.handleClickTag_comp.bind(this)}>#COMP</div>
+        <div className={tagCasual} onClick={this.handleClickTag_casual.bind(this)}>#CASUAL</div>
       </div>
       <div className="party-compose-preview">
         <div className="party-compose-preview-header">PREVIEW TITLE</div>
-        <div className="party-compose-preview-title">{gameName}</div>
-        {/* <div className="party-compose-preview-tags">
+        <div className="party-compose-preview-title">{gameTitle}</div>
+        <div className="party-compose-preview-tags">
           {tagsPressed}
-        </div> */}
+        </div>
       </div>
       <div className="party-compose-decision">
         <span className="party-compose-decision-confirm" onClick={this.handleClickConfirm.bind(this)}>CONFIRM</span>

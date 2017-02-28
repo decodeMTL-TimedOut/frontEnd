@@ -105,11 +105,11 @@ class PartyList extends React.Component {
   }
 
   render() {
-
-    console.log("The user Id is the creator:" , this.props.userId ? this.props.userId : "not yet set")
-    console.log(this.state.isLeader)
-    console.log("The user Id is a member: ", this.props.member ? this.props.userId : "not yet set")
-    console.log(this.state.isMember)
+    var partyData = this.props.partyData;
+    // console.log("The user Id is the creator:" , this.props.userId ? this.props.userId : "not yet set")
+    // console.log(this.state.isLeader)
+    // console.log("The user Id is a member: ", this.props.member ? this.props.userId : "not yet set")
+    // console.log(this.state.isMember)
     return (
       <div>
         <div className="party-list">

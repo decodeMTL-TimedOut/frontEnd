@@ -7,7 +7,9 @@ import GameID from './GameID';
 var c9 = 'https://timedout-leblancbryan.c9users.io/'
 var cors = 'https://cors-anywhere.herokuapp.com/'
 
-var url = `${cors}${c9}main`;
+var baseUrl = `${cors}${c9}`;
+
+
 
 class Main extends React.Component {
   constructor() {
@@ -18,22 +20,19 @@ class Main extends React.Component {
     };
   }
 
-  //regular get
-  // componentDidMount() {
-  //
-  //   var that = this;
-  //   fetch(url)
-  //     .then( (response) => {
-  //       return response.json() })
-  //         .then( (json) => {
-  //           that.setState({
-  //             gamedata: json.result
-  //           });
-  //   });
-  // }
 
-  componentDidMount() {
-    fetch(url)
+  fetchData() {
+    if(this.props.router.location.query.q) { // if a query has been detected, this fetch will happen
+      var query = this.props.router.location.query.q;
+      var searchUrl = `${baseUrl}search?q=${query}`;
+
+    }
+    else { // if no search is detected, this fetch will default
+      var searchUrl = `${baseUrl}main`;
+    }
+
+    console.log("hello" ,searchUrl)
+    fetch(searchUrl)
       .then(response => response.json())
       .then(
         gamedata => {
@@ -44,34 +43,32 @@ class Main extends React.Component {
       )
   }
 
-  // fetch(`https://api.github.com/users/${this.props.params.username}/repos?access_token=${key}`)
-  //   .then(response => response.json())
-  //   .then(
-  //     repos => {
-  //             // How can we use `this` inside a callback without binding it??
-  //             // Make sure you understand this fundamental difference with arrow functions!!!
-  //       this.setState({
-  //         repos: repos
-  //       });
-  //     }
-  //   );
+
+
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentWillReceiveProps(newProps) {
+      this.fetchData();
+
+  }
 
   render() {
     console.log(this.state.gamedata)
-    const gameData = this.state.gamedata;
+    const gamedata = this.state.gamedata;
+
+    // make a ternary to compare previous states
     return (
       <div className="main-page">
-        {gameData ? gameData.map((gamedata) => <GameID gameData={gamedata} key={gamedata.gameId}/>) : null}
+        {gamedata ? gamedata.map((gamedata) => <GameID gameData={gamedata} key={gamedata.gameId}/>) : null}
       </div>
     )
   }
 }
 
 export default Main;
-
-// {repos.map((repos) => <GitHubRepo user={repos} key={repos.id}/>)} */
-// /* <GameID />
-
 
   // 1.when fetch happens:
   // on click, componentDidMount

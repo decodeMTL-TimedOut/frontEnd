@@ -2,10 +2,10 @@ import React from 'react';
 import { browserHistory as history } from 'react-router';
 import { Link } from 'react-router';
 
-var c9 = 'https://timedout-leblancbryan.c9users.io/'
-var cors = 'https://cors-anywhere.herokuapp.com/'
-
-var url = `${cors}${c9}main`;
+// var c9 = 'https://timedout-leblancbryan.c9users.io/'
+// var cors = 'https://cors-anywhere.herokuapp.com/'
+//
+// var url = `${cors}${c9}main`;
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class SearchBar extends React.Component {
         // Why do we need to do this?? Make sure you understand!!!
         this.state={
           currentInput: ""
+          // query: ""
         }
   }
 
@@ -24,31 +25,35 @@ class SearchBar extends React.Component {
   }
 
 
-  handleSubmit() {
+  handleSubmit(event) {
+    event.preventDefault();
 
-
+    // this.setState({
+    //   query: this.state.currentInput
+    // })
+    history.replace(`/?q=${this.state.currentInput}`)
   }
 
-  componentDidMount() {
-    var payload = {
-      userId: this.state.profile.user_id
-    }
-    var data = new FormData();
-    data.append("json", JSON.stringify(payload));
-     //get back to me on this when you get here
-    var that = this;
-    fetch(url, {
-      method: 'POST',
-      body: data
-    })
-      .then( (response) => {
-        return response.json() })
-          .then( (json) => {
-            that.setState({
-              gamedata: json
-            });
-    });
-  }
+  // componentDidMount() {
+  //   var payload = {
+  //     userId: this.state.profile.user_id
+  //   }
+  //   var data = new FormData();
+  //   data.append("json", JSON.stringify(payload));
+  //    //get back to me on this when you get here
+  //   var that = this;
+  //   fetch(url, {
+  //     method: 'POST',
+  //     body: data
+  //   })
+  //     .then( (response) => {
+  //       return response.json() })
+  //         .then( (json) => {
+  //           that.setState({
+  //             gamedata: json
+  //           });
+  //   });
+  // }
 
 
 

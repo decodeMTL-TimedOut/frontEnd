@@ -37,22 +37,31 @@
 
 .game-page-information-description-title {
   height: 15%;
-  width: 100%;
+  width: 80%;
 }
 
-.game-page-information-description-title h1 {
+.game-page-information-description-title{
+  margin: 0.25em;
   color: white;
   font-style: italic;
   font-size: 1.25em;
   text-align: center;
 }
 
-.game-page-information-description-info {
-  height: 65%;
-  width: 100%;
+.game-page-information-description-platform {
+  margin: 0.15em;
+  height: 15%;
+  width: 80%;
+  color: white;
 }
 
-.game-page-information-description-info p {
+.game-page-information-description-info {
+  margin: 0.15em;
+  height: 65%;
+  width: 80% ;
+}
+
+.game-page-information-description-info {
   padding: 0em 1.25em;
   color: white;
   font-size: 0.9em;
@@ -77,7 +86,7 @@
   color: white;
   font-size: 1.05em;
   width: 160px;
-  height: 100px;
+  height: 40px;
 }
 
 .game-page-information-button-pressed {
@@ -88,7 +97,7 @@
   color: white;
   font-size: 1.05em;
   width: 160px;
-  height: 60px;
+  height: 40px;
   border:2px solid white;
   opacity: 0.5;
 }

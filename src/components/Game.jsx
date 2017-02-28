@@ -4,13 +4,20 @@ import PartyList from './PartyList';
 import Party from './Party';
 import Create from './Create';
 
+
+var c9 = 'https://timedout-leblancbryan.c9users.io/'
+var cors = 'https://cors-anywhere.herokuapp.com/'
+
+var baseUrl = `${cors}${c9}`;
+
 class Game extends React.Component {
   constructor() {
     super();
 
     this.state = {
       createFormClosed: true,
-      createButtonPressed: false
+      createButtonPressed: false,
+      gamedata: ""
     };
   }
 
@@ -52,6 +59,14 @@ class Game extends React.Component {
     })
   }
 
+
+    // <PartyList userId="hyowon19" member="true"/>
+    // <PartyList userId="bryanLeBlanc" member="true"/>
+    // <PartyList userId="terminator33" member="false"/>
+    // <PartyList userId="bubba" member="false"/>
+    // <PartyList userId="juked09" member="false"/>
+    // <PartyList userId="someoneAwesome56" member="true"/>
+
   //     var Parent = React.createClass({
   //   getInitialState: function() {
   //     return {highlighted: false};
@@ -69,7 +84,28 @@ class Game extends React.Component {
   //   },
   // });
 
+  componentDidMount() {
+    var gameId = this.props.params.id;
+    var gameUrl = `${baseUrl}games/${gameId}`;
+
+    fetch(gameUrl)
+      .then(response => response.json())
+      .then(
+        gamedata => {
+          this.setState ({
+            gamedata: gamedata.result
+          })
+        }
+      )
+  }
+
+
   render() {
+    const gamedata = this.state.gamedata;
+
+    // console.log(gamedata , "hello world")
+    // console.log(this.state.gamedata, "i am over here now")
+    // console.log(gamedata.parties, "yo yoyoy");
 
     var className_Create = "game-page-information-button" + (this.state.createButtonPressed ? "-pressed" : '');
 
@@ -77,7 +113,7 @@ class Game extends React.Component {
       <div className="game-page">
         <div className="game-page-information"
           style={{
-            backgroundImage: 'url(http://siliconangle.com/files/2015/11/overwatch-heroes-background-blizzard-1080x623.png)',
+            backgroundImage: `url(${this.state.gamedata.art})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center"
@@ -86,13 +122,16 @@ class Game extends React.Component {
           </div>
           <div className="game-page-information-description">
             <div className="game-page-information-description-title">
-              <h1>Overwatch</h1>
+              {this.state.gamedata.gameName}
             </div>
-            <div className="game-page-information-description-info">
-              <p>Overwatch ended the crisis, and helped maintain peace in the decades that followed, inspiring an era of exploration, innovation, and discovery.</p>
+            <div className="game-page-information-description-platform">
+              {this.state.gamedata.platform}
             </div>
-            <div className={className_Create} onClick={this.handleClick.bind(this)}>Create Party</div>
+            {/* <div className="game-page-information-description-info">
+              {this.state.gamedata.description}
+            </div> */}
           </div>
+          <div className={className_Create} onClick={this.handleClick.bind(this)}>Create Party</div>
         </div>
         { !this.state.createFormClosed  ?
           <Create
@@ -100,12 +139,8 @@ class Game extends React.Component {
             onClickConfirm={this.onClickConfirm_Create.bind(this)}
             onClickDelete={this.onClickDelete_Create.bind(this)}
           />  : null }
-        <PartyList userId="hyowon19" member="true"/>
-        <PartyList userId="bryanLeBlanc" member="true"/>
-        <PartyList userId="terminator33" member="false"/>
-        <PartyList userId="bubba" member="false"/>
-        <PartyList userId="juked09" member="false"/>
-        <PartyList userId="someoneAwesome56" member="true"/>
+
+        {gamedata.parties ? gamedata.parties.map((gamedata) => <PartyList partyData={gamedata} key={gamedata.gameId}/>) : null}
       </div>
     )
   }
