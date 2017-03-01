@@ -10,8 +10,6 @@ var cors = 'https://cors-anywhere.herokuapp.com/'
 
 var baseUrl = `${cors}${c9}`;
 
-var url = "";
-
 class Create extends React.Component {
   constructor() {
     super();
@@ -51,32 +49,44 @@ class Create extends React.Component {
 
   handleClickConfirm() {
     this.props.onClickConfirm();
-    // i need to initiate the payload from here
-    if(this.state.confirmButtonPressed === true) {
+
+    var userId = this.props.auth.getProfile().user_id;
+
+    var username = this.props.auth.getProfile().name;
+
+    var gameData = this.props.gameData;
+    var createUrl = `${baseUrl}games/${gameData.gameId}/parties/create`
+
       var payload = {
         // userId: this.state.profile.user_id,
-        gameTitle: this.state.gameTitle,
+        userId: userId,
+        username: username,
+        gameName: this.state.currentInputTitle,
         numOfPlayers: this.state.numOfPlayers,
         startTime: this.state.startTime,
         endTime: this.state.endTime,
-        pvp: this.state.pvp,
-        pve: this.state.pve,
-        exp: this.state.exp,
-        farm: this.state.farm,
-        pro: this.state.pro,
-        noob: this.state.noob,
-        comp: this.state.comp,
-        casual: this.state.casual,
-        startTime: this.state.startTime,
-        endTime: this.state.endTime
+        tags: {
+          pvp: this.state.pvp,
+          pve: this.state.pve,
+          exp: this.state.exp,
+          farm: this.state.farm,
+          pro: this.state.pro,
+          noob: this.state.noob,
+          comp: this.state.comp,
+          casual: this.state.casual
+        }
       }
-      var data = new FormData();
-      data.append("json", JSON.stringify(payload));
+      // var data = new FormData();
+      // data.append("json", JSON.stringify(payload));
        //get back to me on this when you get here
-
-      fetch(url, {
-        method: 'POST',
-        body: data
+      //  console.log("hello, you are here now")
+      fetch(createUrl, {
+        method: 'post',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
       })
         .then( (response) => {
           return response.json() })
@@ -85,7 +95,8 @@ class Create extends React.Component {
                 gamedata: json
               });
             });
-    }
+    // }
+
   }
 
   handleClickBack() {
@@ -227,14 +238,14 @@ class Create extends React.Component {
   }
 
   setStartTime(startTime) {
-    console.log("The startTime you selected is: ", startTime._d);
+    // console.log("The startTime you selected is: ", startTime._d);
     this.setState ({
       startTime: startTime._d
     })
   }
 
   setEndTime(endTime) {
-    console.log("The endtime you selected is: ", endTime._d);
+    // console.log("The endtime you selected is: ", endTime._d);
     this.setState ({
       endTime: endTime._d
     })
@@ -249,11 +260,12 @@ class Create extends React.Component {
 
 
   render() {
+    // console.log("AUTH !!!!!!!!!!!!!!!!!!!!!!!!!!!",this.props.auth.getProfile())
+    var gameData = this.props.gameData;
+
     var gameTitle = this.state.currentInputTitle;
     var tagsPressed = this.state.pvpValue + this.state.pveValue + this.state.expValue + this.state.farmValue + this.state.proValue + this.state.noobValue + this.state.compValue + this.state.casualValue;
-
     // var gameName = gameTitle + " " + tagsPressed;
-
     var tagPvp = "party-tag-pvp" + (this.state.pvp ? "-pressed" : '');
     var tagPve = "party-tag-pve" + (this.state.pve ? "-pressed" : '');
     var tagExp = "party-tag-exp" + (this.state.exp ? "-pressed" : '');
@@ -309,9 +321,7 @@ class Create extends React.Component {
       <div className="party-compose-preview">
         <div className="party-compose-preview-header">PREVIEW TITLE</div>
         <div className="party-compose-preview-title">{gameTitle}</div>
-        <div className="party-compose-preview-tags">
-          {tagsPressed}
-        </div>
+        <div className="party-compose-preview-tags">{tagsPressed}</div>
       </div>
       <div className="party-compose-decision">
         <span className="party-compose-decision-confirm" onClick={this.handleClickConfirm.bind(this)}>CONFIRM</span>

@@ -59,31 +59,6 @@ class Game extends React.Component {
     })
   }
 
-
-    // <PartyList userId="hyowon19" member="true"/>
-    // <PartyList userId="bryanLeBlanc" member="true"/>
-    // <PartyList userId="terminator33" member="false"/>
-    // <PartyList userId="bubba" member="false"/>
-    // <PartyList userId="juked09" member="false"/>
-    // <PartyList userId="someoneAwesome56" member="true"/>
-
-  //     var Parent = React.createClass({
-  //   getInitialState: function() {
-  //     return {highlighted: false};
-  //   },
-  //   render: function() {
-  //     var className = 'card' + (this.state.highlighted ? ' highlighted' : '');
-  //     return (
-  //       <div className={className}>
-  //         <EditableTextarea onClick={this.toggleHighlight} />
-  //       </div>
-  //     );
-  //   },
-  //   toggleHighlight: function() {
-  //     this.setState({highlighted: !this.state.highlighted});
-  //   },
-  // });
-
   componentDidMount() {
     var gameId = this.props.params.id;
     var gameUrl = `${baseUrl}games/${gameId}`;
@@ -99,13 +74,9 @@ class Game extends React.Component {
       )
   }
 
-
   render() {
     const gamedata = this.state.gamedata;
-
-    // console.log(gamedata , "hello world")
-    // console.log(this.state.gamedata, "i am over here now")
-    // console.log(gamedata.parties, "yo yoyoy");
+    const gameDataGameId = this.state.gamedata;
 
     var className_Create = "game-page-information-button" + (this.state.createButtonPressed ? "-pressed" : '');
 
@@ -135,12 +106,14 @@ class Game extends React.Component {
         </div>
         { !this.state.createFormClosed  ?
           <Create
+            gameData={gamedata}
             onClickBack={this.onClickBack_Create.bind(this)}
             onClickConfirm={this.onClickConfirm_Create.bind(this)}
             onClickDelete={this.onClickDelete_Create.bind(this)}
+            auth={this.props.route.auth}
           />  : null }
 
-        {gamedata.parties ? gamedata.parties.map((gamedata) => <PartyList partyData={gamedata} key={gamedata.gameId}/>) : null}
+        { gamedata.parties ? gamedata.parties.map((gamedata) => <PartyList gameDataGameId={gameDataGameId} auth={this.props.route.auth} partyData={gamedata} key={gamedata.gameId}/>) : null }
       </div>
     )
   }

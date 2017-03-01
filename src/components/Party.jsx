@@ -3,6 +3,12 @@ import { Link } from 'react-router';
 
 import PartyMember from './PartyMember';
 
+var c9 = 'https://timedout-leblancbryan.c9users.io/'
+var cors = 'https://cors-anywhere.herokuapp.com/'
+
+var baseUrl = `${cors}${c9}`;
+
+
 class Party extends React.Component {
   constructor() {
     super();
@@ -13,14 +19,85 @@ class Party extends React.Component {
 
   handleClickJoin() {
     this.props.onClickJoin();
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var joinUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/join`
+    // console.log(joinUrl)
+    var payload = {
+        // ask brian what does he look for here
+        something: ""
+    }
+    fetch(joinUrl, {
+      method:"post",
+      headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
   }
 
   handleClickEdit() {
     this.props.onClickEdit();
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var editUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/edit`
+
+    var payload = {
+        // ask brian what does he look for here
+
+    }
+    fetch(editUrl, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+      })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
   }
 
   handleClickLeave() {
     this.props.onClickLeave();
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var leaveUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/leave`
+
+    var payload = {
+        // ask brian what does he look for here
+    }
+    fetch(leaveUrl, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+      })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
   }
 
   handleClickBack() {
@@ -29,10 +106,56 @@ class Party extends React.Component {
 
   handleClickDelete() {
     this.props.onClickDelete();
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var deleteUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/delete`
+
+    var payload = {
+        // ask brian what does he look for here
+    }
+    fetch(deleteUrl, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+      })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
   }
 
   handleClickStart(){
     this.props.onClickStart();
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var startUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/start` //this is probably confirm
+
+    var payload = {
+        // ask brian what does he look for here
+    }
+    fetch(startUrl, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+      })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
   }
 
   render() {
@@ -40,6 +163,8 @@ class Party extends React.Component {
     var isLeader = this.props.checkIsLeader;
     var isMember = this.props.checkIsMember;
 
+    var partyData = this.props.partyData;
+    
     return (
       <div>
         <div className="party-view">
@@ -49,32 +174,30 @@ class Party extends React.Component {
             <div className="party-view-info-title">
               <div className="party-view-box-title">TITLE</div>
               <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">insert game name</div>
+              <div className="party-view-box-content">{partyData.partyName}</div>
             </div>
             <div className="party-view-info-size">
               <div className="party-view-box-title">PARTY SIZE</div>
               <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">insert party size number</div>
+              <div className="party-view-box-content">{partyData.size}</div>
             </div>
             <div className="party-view-info-time">
               <div className="party-view-box-title">START TIME</div>
               <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">insert start time here</div>
+              <div className="party-view-box-content">{partyData.startTime}</div>
             </div>
             <div className="party-view-info-time">
               <div className="party-view-box-title">END TIME</div>
               <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">insert end time here</div>
+              <div className="party-view-box-content">{partyData.endTime}</div>
             </div>
           </div>
           <div className="party-view-users">
             <span>PARTY MEMBERS</span>
             <span className="party-view-users-breaker"></span>
-            <PartyMember />
-            <PartyMember />
-            <PartyMember />
-            <PartyMember />
-            <PartyMember />
+
+            {partyData.users ? partyData.users.map((partyData) => <PartyMember memberData={partyData} key={partyData}/>) : null}
+
           </div>
           <div className="party-view-decision">
             { isLeader ?
