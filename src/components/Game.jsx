@@ -60,6 +60,7 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
+    console.log("hello, i am voer here")
     var gameId = this.props.params.id;
     var gameUrl = `${baseUrl}games/${gameId}`;
 
@@ -78,7 +79,8 @@ class Game extends React.Component {
     const gamedata = this.state.gamedata;
     const gameDataGameId = this.state.gamedata;
 
-    console.log(this.props.auth)
+    console.log(gamedata, "over here this is the gamer")
+    // console.log(this.props.auth)
     // var string1= "Hello how on this fine day #are #you #all #doing?";
     // var result = string1.substring(string1.indexOf('#') + 1);
     //

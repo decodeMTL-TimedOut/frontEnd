@@ -3,7 +3,6 @@ import { browserHistory as history } from 'react-router';
 
 import Party from './Party';
 import Edit from './Edit';
-import Confirmation from './Confirmation';
 
 class PartyList extends React.Component {
   constructor() {
@@ -39,9 +38,7 @@ class PartyList extends React.Component {
   }
 
   onClickStart_Party() {
-    <Confirmation />
-    history.replace('/');
-    alert("hello");
+    alert('hello');
     this.setState ({
       partyFormClosed: true
     })

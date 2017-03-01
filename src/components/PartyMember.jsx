@@ -13,6 +13,7 @@ class PartyMember extends React.Component {
   }
 
 
+
   render() {
     var isLeader = this.props.isLeader;
     var isMember = this.props.isMember;
