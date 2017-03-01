@@ -97,7 +97,6 @@ class Edit extends React.Component {
   }
 
 
-  // wrong place for this one, this is only for DELETE in the EDIT PARTY section
   handleClickDelete_Edit(event) {
     this.props.onClickDelete();
   }
@@ -268,7 +267,7 @@ class Edit extends React.Component {
     return (
     <div className="party-compose">
       <div className="party-compose-base">
-        <p>Create Party</p>
+        <p>Edit Party</p>
         <div className="party-compose-base-title">
           <p>Title</p>
           <input type="text" placeholder="Enter your game name" onInput={this.handleInput_Title.bind(this)} value={this.state.currentInputTitle}/>

@@ -1,7 +1,9 @@
 import React from 'react';
+import { browserHistory as history } from 'react-router';
 
 import Party from './Party';
 import Edit from './Edit';
+import Confirmation from './Confirmation';
 
 class PartyList extends React.Component {
   constructor() {
@@ -37,9 +39,13 @@ class PartyList extends React.Component {
   }
 
   onClickStart_Party() {
+    <Confirmation />
+    history.replace('/');
+    alert("hello");
     this.setState ({
       partyFormClosed: true
     })
+
   }
 
   onClickDelete_Party() {
@@ -67,12 +73,25 @@ class PartyList extends React.Component {
     })
   }
 
-  onClickBack_Edit(){
-    this.setState ({
-      editFormClosed: true,
-      partyFormClosed: false
-    })
-  }
+  // onClickBack_Edit(){
+  //   this.setState ({
+  //     editFormClosed: true,
+  //     partyFormClosed: false,
+  //     pvp: this.state.pvp,
+  //     pve: this.state.pve,
+  //     exp: this.state.exp,
+  //     farm: this.state.farm,
+  //     pro: this.state.pro,
+  //     noob: this.state.noob,
+  //     comp: this.state.comp,
+  //     casual: this.state.casual,
+  //     gameName: this.state.currentInputTitle,
+  //     // deleteButtonPressed: false,
+  //     numOfPlayers: this.state.numOfPlayers,
+  //     endTime: this.state.endTime,
+  //     startTime: this.state.startTime
+  //   })
+  // }
 
   onClickDelete_Edit(){
     this.setState ({
@@ -80,8 +99,6 @@ class PartyList extends React.Component {
       partyFormClosed: false
     })
   }
-
-
 
   isLeader_Party() {
     var userId = this.props.auth.getProfile().user_id;
@@ -91,6 +108,10 @@ class PartyList extends React.Component {
         isLeader: true
       })
     }
+  }
+
+  getLeaderId() {
+    return this.props.partyData.users[0].userId
   }
 
   isMember_Party() {
@@ -113,17 +134,11 @@ class PartyList extends React.Component {
   }
 
   render() {
-    // console.log(this.props.auth.getProfile().user_id)
-    // console.log(this.props.auth.getProfile().name)
-
-
     var partyData = this.props.partyData;
     var gameDataGameId = this.props.gameDataGameId;
 
     var profileUserId = this.props.auth.getProfile().user_id;
     var profileUserName = this.props.auth.getProfile().name;
-    // console.log(profileUserId)
-    // console.log(profileUserName)
 
     return (
       <div>
@@ -168,11 +183,12 @@ class PartyList extends React.Component {
             checkIsLeader={this.state.isLeader}
             checkIsMember={this.state.isMember}
             onClickBack={this.onClickBack_Party.bind(this)}
-            onClickEdit={this.onClickEdit_Party.bind(this)}
+            // onClickEdit={this.onClickEdit_Party.bind(this)}
             onClickStart={this.onClickStart_Party.bind(this)}
             onClickDelete={this.onClickDelete_Party.bind(this)}
             onClickJoin={this.onClickJoin_Party.bind(this)}
             onClickLeave={this.onClickLeave_Party.bind(this)}
+            leaderId={this.getLeaderId.bind(this)}
           /> : null }
         { !this.state.editFormClosed ?
           <Edit

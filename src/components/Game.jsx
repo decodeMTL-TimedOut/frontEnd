@@ -84,19 +84,22 @@ class Game extends React.Component {
     //
     // console.log(result)
 
+    // style={{
+      //   backgroundImage: `url(${this.state.gamedata.art})`,
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center center"
+      // }}>
+
     var className_Create = "game-page-information-button" + (this.state.createButtonPressed ? "-pressed" : '');
 
     return (
       <div className="game-page">
-        <div className="game-page-information"
-          style={{
-            backgroundImage: `url(${this.state.gamedata.art})`,
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center"
-          }}>
+        <div className="game-page-information">
           <div className="game-page-information-art">
+            <img src={this.state.gamedata.art} alt=""/>
           </div>
+
           <div className="game-page-information-description">
             <div className="game-page-information-description-title">
               {this.state.gamedata.gameName}
@@ -104,11 +107,12 @@ class Game extends React.Component {
             <div className="game-page-information-description-platform">
               {this.state.gamedata.platform}
             </div>
-            {/* <div className="game-page-information-description-info">
+            <div className="game-page-information-description-info">
               {this.state.gamedata.description}
-            </div> */}
+            </div>
           </div>
           <div className={className_Create} onClick={this.handleClick.bind(this)}>Create Party</div>
+
         </div>
         { !this.state.createFormClosed  ?
           <Create

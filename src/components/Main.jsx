@@ -19,12 +19,12 @@ class Main extends React.Component {
   }
 
   fetchData() {
-    if(this.props.router.location.query.q) { // if a query has been detected, this fetch will happen
+    if(this.props.router.location.query.q) { 
       var query = this.props.router.location.query.q;
       var searchUrl = `${baseUrl}search?q=${query}`;
 
     }
-    else { // if no search is detected, this fetch will default
+    else {
       var searchUrl = `${baseUrl}main`;
     }
 
@@ -45,7 +45,7 @@ class Main extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-      this.fetchData();
+    this.fetchData();
 
   }
 
@@ -62,48 +62,3 @@ class Main extends React.Component {
 }
 
 export default Main;
-
-
-
-
-
-
-//post
-// componentDidMount() {
-//   var payload = {
-//     userId: this.state.profile.user_id
-//   }
-//   var data = new FormData();
-//   data.append("json", JSON.stringify(payload));
-//    //get back to me on this when you get here
-//   var that = this;
-//   fetch(url, {
-//     method: 'POST',
-//     body: data
-//   })
-//     .then( (response) => {
-//       return response.json() })
-//         .then( (json) => {
-//           that.setState({
-//             gamedata: json
-//           });
-//   });
-// }
-//regular get
-// componentDidMount() {
-//   var url = `https://timedout-leblancbryan.c9users.io/main`; //get back to me on this when you get here
-//   var that = this;
-//   fetch(url)
-//     .then( (response) => {
-//       return response.json() })
-//         .then( (json) => {
-//           that.setState({
-//             gamedata: json
-//           });
-//   });
-// }
-
-
-//   fetch('https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/<YOUR API KEY HERE>/37.8267,-122.4233')
-// .then(response => response.json())
-// .then(data => console.log(data))

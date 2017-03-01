@@ -146,10 +146,9 @@ class Party extends React.Component {
 
     var partyData = this.props.partyData;
     var gameDataGameId = this.props.gameDataGameId;
-    var startUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/start` //this is probably confirm
+    var startUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/confirm` //this is probably confirm
 
     var payload = {
-
     }
     fetch(startUrl, {
       method: 'post',
@@ -168,19 +167,19 @@ class Party extends React.Component {
           });
   }
 
-  handleClickRemove_Member() {
+  handleClickRemove_Member( member) {
     var profileUserId= this.props.profileUserId
     var profileUserName= this.props.profileUserName
 
     var partyData = this.props.partyData;
     var gameDataGameId = this.props.gameDataGameId;
-    var removeUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/remove`
+    var leaveUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/leave`
 
     var payload = {
-      userId: profileUserId,
+      userId: member.userId,
       username: profileUserName
     }
-    fetch(removeUrl, {
+    fetch(leaveUrl, {
       method: 'post',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -198,21 +197,12 @@ class Party extends React.Component {
   }
 
   render() {
-    // userProfileId = this.props.userProfileId;
-    // userProfileName = this.props.userProfileName;
-    // console.log(userProfileId)
-    // console.log(userProfileName)
-    var profileUserId= this.props.profileUserId
-    var profileUserName= this.props.profileUserName
-
     var isLeader = this.props.checkIsLeader;
     var isMember = this.props.checkIsMember;
-
     var partyData = this.props.partyData;
 
-    // console.log(partyData.users[0].userId, 'over here data  ')
-    // console.log(partyData.users[1].userId)
-    // console.log(partyData.users[2].userId)
+    var leader = this.props.checkIsLeader;
+    var member = this.props.checkIsMember;
 
     return (
       <div>
@@ -245,6 +235,9 @@ class Party extends React.Component {
             <span>PARTY MEMBERS</span>
             <span className="party-view-users-breaker"></span>
             {partyData.users ? partyData.users.map((partyData) => <PartyMember
+              leaderId={this.props.leaderId()}
+              isLeader={isLeader}
+              isMember={isMember}
               memberData={partyData}
               key={partyData.userId}
               onClickRemove={this.handleClickRemove_Member.bind(this)}/>)
@@ -254,7 +247,7 @@ class Party extends React.Component {
             { isLeader ?
               <div className="party-view-creator">
                 <div className="party-view-decision-back" onClick={this.handleClickBack.bind(this)}>BACK</div>
-                <div className="party-view-decision-edit" onClick={this.handleClickEdit.bind(this)}>EDIT</div>
+                {/* <div className="party-view-decision-edit" onClick={this.handleClickEdit.bind(this)}>EDIT</div> */}
                 <div className="party-view-decision-delete" onClick={this.handleClickDelete.bind(this)}>DELETE</div>
                 <div className="party-view-decision-start" onClick={this.handleClickStart.bind(this)}>START</div>
               </div>

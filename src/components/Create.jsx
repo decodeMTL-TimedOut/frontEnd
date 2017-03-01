@@ -250,8 +250,6 @@ class Create extends React.Component {
 
 
   render() {
-    console.log(this.props.auth.getProfile().user_id)
-    console.log(this.props.auth.getProfile().name)
 
     var gameData = this.props.gameData;
 
