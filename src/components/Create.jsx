@@ -51,52 +51,44 @@ class Create extends React.Component {
     this.props.onClickConfirm();
 
     var userId = this.props.auth.getProfile().user_id;
-
     var username = this.props.auth.getProfile().name;
 
     var gameData = this.props.gameData;
     var createUrl = `${baseUrl}games/${gameData.gameId}/parties/create`
 
-      var payload = {
-        // userId: this.state.profile.user_id,
-        userId: userId,
-        username: username,
-        gameName: this.state.currentInputTitle,
-        numOfPlayers: this.state.numOfPlayers,
-        startTime: this.state.startTime,
-        endTime: this.state.endTime,
-        tags: {
-          pvp: this.state.pvp,
-          pve: this.state.pve,
-          exp: this.state.exp,
-          farm: this.state.farm,
-          pro: this.state.pro,
-          noob: this.state.noob,
-          comp: this.state.comp,
-          casual: this.state.casual
-        }
+    var payload = {
+      userId: userId,
+      username: username,
+      gameName: this.state.currentInputTitle,
+      numOfPlayers: this.state.numOfPlayers,
+      startTime: this.state.startTime,
+      endTime: this.state.endTime,
+      tags: {
+        pvp: this.state.pvp,
+        pve: this.state.pve,
+        exp: this.state.exp,
+        farm: this.state.farm,
+        pro: this.state.pro,
+        noob: this.state.noob,
+        comp: this.state.comp,
+        casual: this.state.casual
       }
-      // var data = new FormData();
-      // data.append("json", JSON.stringify(payload));
-       //get back to me on this when you get here
-      //  console.log("hello, you are here now")
-      fetch(createUrl, {
-        method: 'post',
-        headers: {
-            'Accept': 'application/json, text/plain, */*',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-      })
-        .then( (response) => {
-          return response.json() })
-            .then( (json) => {
-              this.setState({
-                gamedata: json
-              });
+    }
+    fetch(createUrl, {
+      method: 'post',
+      headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
             });
-    // }
-
+          });
   }
 
   handleClickBack() {
@@ -238,14 +230,12 @@ class Create extends React.Component {
   }
 
   setStartTime(startTime) {
-    // console.log("The startTime you selected is: ", startTime._d);
     this.setState ({
       startTime: startTime._d
     })
   }
 
   setEndTime(endTime) {
-    // console.log("The endtime you selected is: ", endTime._d);
     this.setState ({
       endTime: endTime._d
     })
@@ -260,7 +250,9 @@ class Create extends React.Component {
 
 
   render() {
-    // console.log("AUTH !!!!!!!!!!!!!!!!!!!!!!!!!!!",this.props.auth.getProfile())
+    console.log(this.props.auth.getProfile().user_id)
+    console.log(this.props.auth.getProfile().name)
+
     var gameData = this.props.gameData;
 
     var gameTitle = this.state.currentInputTitle;

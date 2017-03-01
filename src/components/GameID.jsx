@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// var c9 = 'https://timedout-leblancbryan.c9users.io/'
-// var cors = 'https://cors-anywhere.herokuapp.com/'
-//
-// var baseUrl = `${cors}${c9}`;
-
 class GameID extends React.Component {
   constructor() {
     super();

@@ -8,7 +8,6 @@ var cors = 'https://cors-anywhere.herokuapp.com/'
 
 var baseUrl = `${cors}${c9}`;
 
-
 class Party extends React.Component {
   constructor() {
     super();
@@ -20,13 +19,20 @@ class Party extends React.Component {
   handleClickJoin() {
     this.props.onClickJoin();
 
+    var profileUserId= this.props.profileUserId
+    var profileUserName= this.props.profileUserName
+
+    // console.log(profileUserId);
+    // console.log(profileUserName, "yo");
+
     var partyData = this.props.partyData;
     var gameDataGameId = this.props.gameDataGameId;
     var joinUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/join`
     // console.log(joinUrl)
     var payload = {
         // ask brian what does he look for here
-        something: ""
+        userId: profileUserId,
+        username: profileUserName
     }
     fetch(joinUrl, {
       method:"post",
@@ -76,12 +82,16 @@ class Party extends React.Component {
   handleClickLeave() {
     this.props.onClickLeave();
 
+    var profileUserId= this.props.profileUserId
+    var profileUserName= this.props.profileUserName
+
     var partyData = this.props.partyData;
     var gameDataGameId = this.props.gameDataGameId;
     var leaveUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/leave`
 
     var payload = {
-        // ask brian what does he look for here
+      userId: profileUserId,
+      username: profileUserName
     }
     fetch(leaveUrl, {
       method: 'post',
@@ -139,7 +149,7 @@ class Party extends React.Component {
     var startUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/start` //this is probably confirm
 
     var payload = {
-        // ask brian what does he look for here
+
     }
     fetch(startUrl, {
       method: 'post',
@@ -158,13 +168,52 @@ class Party extends React.Component {
           });
   }
 
+  handleClickRemove_Member() {
+    var profileUserId= this.props.profileUserId
+    var profileUserName= this.props.profileUserName
+
+    var partyData = this.props.partyData;
+    var gameDataGameId = this.props.gameDataGameId;
+    var removeUrl = `${baseUrl}games/${gameDataGameId.gameId}/parties/${partyData.partyId}/remove`
+
+    var payload = {
+      userId: profileUserId,
+      username: profileUserName
+    }
+    fetch(removeUrl, {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+      })
+      .then( (response) => {
+        return response.json() })
+          .then( (json) => {
+            this.setState({
+              gamedata: json
+            });
+          });
+  }
+
   render() {
+    // userProfileId = this.props.userProfileId;
+    // userProfileName = this.props.userProfileName;
+    // console.log(userProfileId)
+    // console.log(userProfileName)
+    var profileUserId= this.props.profileUserId
+    var profileUserName= this.props.profileUserName
 
     var isLeader = this.props.checkIsLeader;
     var isMember = this.props.checkIsMember;
 
     var partyData = this.props.partyData;
-    
+
+    // console.log(partyData.users[0].userId, 'over here data  ')
+    // console.log(partyData.users[1].userId)
+    // console.log(partyData.users[2].userId)
+
     return (
       <div>
         <div className="party-view">
@@ -195,9 +244,11 @@ class Party extends React.Component {
           <div className="party-view-users">
             <span>PARTY MEMBERS</span>
             <span className="party-view-users-breaker"></span>
-
-            {partyData.users ? partyData.users.map((partyData) => <PartyMember memberData={partyData} key={partyData}/>) : null}
-
+            {partyData.users ? partyData.users.map((partyData) => <PartyMember
+              memberData={partyData}
+              key={partyData.userId}
+              onClickRemove={this.handleClickRemove_Member.bind(this)}/>)
+            : null}
           </div>
           <div className="party-view-decision">
             { isLeader ?

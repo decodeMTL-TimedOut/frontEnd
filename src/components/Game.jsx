@@ -78,6 +78,12 @@ class Game extends React.Component {
     const gamedata = this.state.gamedata;
     const gameDataGameId = this.state.gamedata;
 
+    console.log(this.props.auth)
+    // var string1= "Hello how on this fine day #are #you #all #doing?";
+    // var result = string1.substring(string1.indexOf('#') + 1);
+    //
+    // console.log(result)
+
     var className_Create = "game-page-information-button" + (this.state.createButtonPressed ? "-pressed" : '');
 
     return (

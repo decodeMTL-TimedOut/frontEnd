@@ -81,6 +81,8 @@ class PartyList extends React.Component {
     })
   }
 
+
+
   isLeader_Party() {
     var userId = this.props.auth.getProfile().user_id;
 
@@ -91,74 +93,19 @@ class PartyList extends React.Component {
     }
   }
 
-
-
-
-// somethingsomething() {
-  // var userId = this.props.auth.getProfile().user_id;
-  // var party = this.props.partyData.users;
-//   var something = party.map(function(member) {
-//     var somethingnew = {};
-//     somethingnew[user_id] = user;
-//     return somethingnew;
-//   )
-// }
-// }
-
-  //     var something = party.some(function(member) {
-  //       return member === userId
-  //     })
-  //   if(something === true) {
-  //     this.setState ({
-  //       isMember: true
-  //     })
-  //     }
-
-
-
-
-    // findMe(aMember) {
-    //   return aMember === userId
-    // }
-    //
-    // isMember(anArray) {
-    //   return anArray.some(findMe())
-    // }
-  // findMember() {
-  //
-  //   party.some(function(member) {
-  //     return party.some(member === userId);
-  //   })
-  // }
-
   isMember_Party() {
     var userId = this.props.auth.getProfile().user_id;
     var party = this.props.partyData.users;
 
     for (var i=0, l=party.length; i<l; i++ ) {
-
-      if (party[i].userId == userId) {
-
+      if (party[i].userId === userId) {
         this.setState ({
            isMember: true
          })
-
         break;
-
       }
-
-
     }
-
-    // if( ) {
-    //   this.setState ({
-    //     isMember: true
-    //   })
-    // }
   }
-
-
-
 
   componentDidMount() {
     this.isLeader_Party();
@@ -166,29 +113,19 @@ class PartyList extends React.Component {
   }
 
   render() {
+    // console.log(this.props.auth.getProfile().user_id)
+    // console.log(this.props.auth.getProfile().name)
 
-    // console.log(this.props.partyData.users)
-    // console.log(isMember_Party())
-    // console.log(this.state.isLeader, "is thia a leader")
-    // console.log(this.state.isMember, "is this a member")
 
     var partyData = this.props.partyData;
-    // var gameId = this.props.gameId;
-    // console.log(gameId, "i am the gameID")
-
     var gameDataGameId = this.props.gameDataGameId;
 
-    // console.log(gameDataGameId, "gamedatagameidSECTION")
-    // console.log(this.props.auth.getProfile() , "??????????????????????????????")
-    // console.log(partyData, "this is the partyDAta")
-    // console.log(partyData)
-    // console.log(partyData.users[0].userId)
-    // console.log("The user Id is the creator:" , this.props.userId ? this.props.userId : "not yet set")
-    // console.log(this.state.isLeader)
-    // console.log("The user Id is a member: ", this.props.member ? this.props.userId : "not yet set")
-    // console.log(this.state.isMember)
-    return (
+    var profileUserId = this.props.auth.getProfile().user_id;
+    var profileUserName = this.props.auth.getProfile().name;
+    // console.log(profileUserId)
+    // console.log(profileUserName)
 
+    return (
       <div>
         <div className="party-list">
           <div className="party-list-party">
@@ -224,6 +161,8 @@ class PartyList extends React.Component {
         </div>
         { !this.state.partyFormClosed ?
           <Party
+            profileUserId={profileUserId}
+            profileUserName={profileUserName}
             gameDataGameId={gameDataGameId}
             partyData={partyData} key={partyData.partyId}
             checkIsLeader={this.state.isLeader}
