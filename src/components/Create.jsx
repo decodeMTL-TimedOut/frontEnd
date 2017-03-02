@@ -107,7 +107,7 @@ class Create extends React.Component {
     })
     if(!this.state.pvp === true) {
       this.setState ({
-        pvpValue: "#PVP "
+        pvpValue: "#pvp "
       })
     }
     else {
@@ -123,7 +123,7 @@ class Create extends React.Component {
     })
     if(!this.state.pve === true) {
       this.setState ({
-        pveValue: "#PVE "
+        pveValue: "#pve "
       })
     }
     else {
@@ -139,7 +139,7 @@ class Create extends React.Component {
     })
     if(!this.state.exp === true) {
       this.setState ({
-        expValue: "#EXP "
+        expValue: "#exp "
       })
     }
     else {
@@ -155,7 +155,7 @@ class Create extends React.Component {
     })
     if(!this.state.farm === true) {
       this.setState ({
-        farmValue: "#FARM "
+        farmValue: "#farm "
       })
     }
     else{
@@ -171,7 +171,7 @@ class Create extends React.Component {
     })
     if(!this.state.pro === true) {
       this.setState ({
-        proValue: "#PRO "
+        proValue: "#pro "
       })
     }
     else {
@@ -187,7 +187,7 @@ class Create extends React.Component {
     })
     if(!this.state.noob === true) {
       this.setState ({
-        noobValue: "#NOOB "
+        noobValue: "#noob "
       })
     }
     else {
@@ -203,7 +203,7 @@ class Create extends React.Component {
     })
     if(!this.state.comp === true) {
       this.setState ({
-        compValue: "#COMP "
+        compValue: "#comp "
       })
     }
     else {
@@ -219,7 +219,7 @@ class Create extends React.Component {
     })
     if(!this.state.casual === true) {
       this.setState ({
-        casualValue: "#CASUAL "
+        casualValue: "#casual "
       })
     }
     else {
@@ -270,11 +270,11 @@ class Create extends React.Component {
       <div className="party-compose-base">
         {/* <p>Create Party</p> */}
         <div className="party-compose-base-title">
-          <p>Title</p>
+          <p>Enter Game Name</p>
           <input type="text" placeholder="Enter your game name" onInput={this.handleInput_Title.bind(this)} value={this.state.currentInputTitle}/>
         </div>
         <div className="party-compose-base-party">
-          <p>Number of Players</p>
+          <p>Pick Your Party Size</p>
           <select onChange={this.changeNumOfPlayers.bind(this)} value={this.state.value}>
             <option>Select Number</option>
             <option value="1">1</option>
@@ -290,23 +290,23 @@ class Create extends React.Component {
           </select>
         </div>
         <div className="party-compose-base-time">
-          <span>Start Time</span>
+          <span>Select Start Time</span>
           <Datetime onChange={this.setStartTime.bind(this)} Datetime dateFormat="YYYY-MM-DD" timeFormat={true}/>
         </div>
         <div className="party-compose-base-time">
-          <span>End Time</span>
+          <span>Selecct End Time</span>
           <Datetime onChange={this.setEndTime.bind(this)} Datetime dateFormat="YYYY-MM-DD" timeFormat={true}/>
         </div>
       </div>
       <div className="party-compose-tag">
-        <div className={tagPvp} onClick={this.handleClickTag_pvp.bind(this)}>#PVP</div>
-        <div className={tagPve} onClick={this.handleClickTag_pve.bind(this)}>#PVE</div>
-        <div className={tagExp} onClick={this.handleClickTag_exp.bind(this)}>#EXP</div>
-        <div className={tagFarm} onClick={this.handleClickTag_farm.bind(this)}>#FARM</div>
-        <div className={tagPro} onClick={this.handleClickTag_pro.bind(this)}>#PRO</div>
-        <div className={tagNoob} onClick={this.handleClickTag_noob.bind(this)}>#NOOB</div>
-        <div className={tagComp} onClick={this.handleClickTag_comp.bind(this)}>#COMP</div>
-        <div className={tagCasual} onClick={this.handleClickTag_casual.bind(this)}>#CASUAL</div>
+        <div className={tagPvp} onClick={this.handleClickTag_pvp.bind(this)}>#pvp</div>
+        <div className={tagPve} onClick={this.handleClickTag_pve.bind(this)}>#pve</div>
+        <div className={tagExp} onClick={this.handleClickTag_exp.bind(this)}>#exp</div>
+        <div className={tagFarm} onClick={this.handleClickTag_farm.bind(this)}>#farm</div>
+        <div className={tagPro} onClick={this.handleClickTag_pro.bind(this)}>#pro</div>
+        <div className={tagNoob} onClick={this.handleClickTag_noob.bind(this)}>#noob</div>
+        <div className={tagComp} onClick={this.handleClickTag_comp.bind(this)}>#comp</div>
+        <div className={tagCasual} onClick={this.handleClickTag_casual.bind(this)}>#casual</div>
       </div>
       <div className="party-compose-preview">
         <div className="party-compose-preview-header">PREVIEW TITLE</div>

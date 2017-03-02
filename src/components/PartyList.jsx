@@ -149,7 +149,7 @@ class PartyList extends React.Component {
                   {partyData.tags && partyData.tags.pve ? <div className="pl-box-tag"> #pve </div> : null}
                   {partyData.tags && partyData.tags.noob ? <div className="pl-box-tag"> #noob </div> : null}
                   {partyData.tags && partyData.tags.casual ? <div className="pl-box-tag"> #casual </div> : null}
-                  {partyData.tags && partyData.tags.comp ? <div className="pl-box-tag">#comp </div> : null}
+                  {partyData.tags && partyData.tags.comp ? <div className="pl-box-tag"> #comp </div> : null}
                   {partyData.tags && partyData.tags.farm ? <div className="pl-box-tag"> #farm </div> : null}
                   {partyData.tags && partyData.tags.exp ? <div className="pl-box-tag"> #exp </div> : null}
                 </div>
@@ -174,13 +174,14 @@ class PartyList extends React.Component {
                     </div>
                   </div>
                 </div>
+                <div className="party-list-mobile-spacer"></div>
                 <div className="party-list-party-other">
                   <div className="party-list-party-other-time">
-                    <div className="party-list-time-title">START</div>
+                    <div className="party-list-time-title">START TIME</div>
                     <div className="party-list-time-info">{partyData.startTime}</div>
                   </div>
                   <div className="party-list-party-other-time">
-                    <div className="party-list-time-title">END</div>
+                    <div className="party-list-time-title">END TIME</div>
                     <div className="party-list-time-info">{partyData.endTime}</div>
                   </div>
                 </div>

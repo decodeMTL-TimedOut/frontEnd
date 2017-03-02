@@ -209,14 +209,14 @@ class Party extends React.Component {
         <div className="party-view">
           <div className="party-view-box-content-title">{partyData.partyName}</div>
           <div className="party-view-box-content-title-tags">
-            {partyData.tags && partyData.tags.pvp ? <div className="box-tag"> #pvp </div> : null}
-            {partyData.tags && partyData.tags.pve ? <div className="box-tag"> #pve </div> : null}
-            {partyData.tags && partyData.tags.farm ? <div className="box-tag"> #farm </div> : null}
-            {partyData.tags && partyData.tags.noob ? <div className="box-tag"> #noob </div> : null}
-            {partyData.tags && partyData.tags.casual ? <div className="box-tag"> #casual </div> : null}
-            {partyData.tags && partyData.tags.comp ? <div className="box-tag">#comp </div> : null}
-            {partyData.tags && partyData.tags.farm ? <div className="box-tag"> #farm </div> : null}
-            {partyData.tags && partyData.tags.exp ? <div className="box-tag"> #exp </div> : null}
+            {partyData.tags && partyData.tags.pvp ? <div className="c-box-tag"> #pvp </div> : null}
+            {partyData.tags && partyData.tags.pve ? <div className="c-box-tag"> #pve </div> : null}
+            {partyData.tags && partyData.tags.farm ? <div className="c-box-tag"> #farm </div> : null}
+            {partyData.tags && partyData.tags.noob ? <div className="c-box-tag"> #noob </div> : null}
+            {partyData.tags && partyData.tags.casual ? <div className="c-box-tag"> #casual </div> : null}
+            {partyData.tags && partyData.tags.comp ? <div className="c-box-tag"> #comp </div> : null}
+            {partyData.tags && partyData.tags.farm ? <div className="c-box-tag"> #farm </div> : null}
+            {partyData.tags && partyData.tags.exp ? <div className="c-box-tag"> #exp </div> : null}
           </div>
           <div className="party-view-users-breaker"></div>
           <div className="party-view-info">

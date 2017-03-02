@@ -1,5 +1,5 @@
 .party-list {
-  margin: 1.25em 0em;
+  margin: 1em 0em 0em 0em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -182,19 +182,25 @@ span.party-list-party-players-small {
 }
 
 .party-list-party-title-lineOne {
+  padding: 0em 0.5em;
   font-size: 1.5em;
   display: flex;
   margin-top: 0.5em;
   margin-bottom: 0.25em;
+  text-align: center;
 }
 
 .party-list-party-title-lineTwo {
+  margin-right: 0.1em;
+  margin-left: 0.1em;
   font-style: italic;
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5em;
   margin-top: 0.1em;
   opacity: 0.65;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .pl-box-tag {
@@ -229,4 +235,48 @@ span.party-list-party-players-small {
   opacity: 0.65;
   width: 25px;
   max-width: 100%;
+}
+
+.party-list-mobile-spacer {
+  width: 100%;
+  border:1px solid rgba(255,255,255,0.175);
+  height: 1px;
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .party-list {
+    height: 450px;
+  }
+
+  .party-list-mobile-spacer {
+    display: block;
+  }
+
+  .party-list-game-info {
+
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    /*border: 1px solid red;*/
+  }
+
+  .party-list-party-players-box {
+    /*display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 50%;*/
+    height: 150px;
+    /*border: 1px solid white;*/
+  }
+
+  .party-list-party-other {
+    /*width: 100%;
+    display: flex;
+    flex-direction: row;*/
+    height: 150px;
+  }
+
 }

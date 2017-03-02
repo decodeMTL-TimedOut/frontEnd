@@ -114,8 +114,9 @@ class Game extends React.Component {
                 {this.state.gamedata.description}
               </div>
             </div>
+            {/* <img src="/img/create-Plus.png" alt=""/> */}
             <div className="game-page-information-button-area">
-              <div className={className_Create} onClick={this.handleClick.bind(this)}><img src="/img/create-Plus.png" alt=""/></div>
+              <div className={className_Create} onClick={this.handleClick.bind(this)}><p>CREATE PARTY</p></div>
             </div>
           </div>
         </div>

@@ -27,11 +27,15 @@
   /*border: 1px solid orange;*/
 }
 
+.game-page-title-name {
+  color: white;
+}
+
 .game-page-information-art {
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 272px;
+  width: 350px;
   height: 380px;
 }
 
@@ -118,29 +122,53 @@
   height: 30%;
 }
 
-.game-page-information-button img{
+.game-page-information-button p{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.35em;
   /*background-color: dodgerblue;*/
-  /*color: white;*/
+  color: dodgerblue;
   /*font-size: 1.05em;*/
-  width: 100px;
+  /*width: 100px;*/
   height: 100px;
   margin-bottom: 1em;
   /*transition: 0.5s*/
 }
 
-.game-page-information-button-pressed img{
+.game-page-information-button-pressed p{
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.35em;
   /*background-color: dodgerblue;*/
-  /*color: white;*/
+  color: white;
   /*font-size: 1.05em;*/
-  width: 100px;
+  /*width: 100px;*/
   height: 100px;
   /*border:2px solid white;*/
   opacity: 0.25;
   margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 960px) {
+  .game-page-information-description-title{
+
+    font-size: 1.25em;
+    /*text-align: center;*/
+    /*border: 1px solid red;*/
+  }
+
+  .game-page-information-description-platform {
+
+    font-size: 0.75em;
+
+    /*border:1px solid green;*/
+  }
+
+  .game-page-information-description-info {
+
+    font-size: 0.9em;
+
+  }
 }
