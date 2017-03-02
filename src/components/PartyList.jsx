@@ -143,26 +143,46 @@ class PartyList extends React.Component {
           <div className="party-list-party">
             <div className="party-list-party-info">
               <div className="party-list-party-title">
-                <p>{partyData.partyName}</p>
+                <div className="party-list-party-title-lineOne">{partyData.partyName}</div>
+                <div className="party-list-party-title-lineTwo">
+                  {partyData.tags && partyData.tags.pvp ? <div className="pl-box-tag"> #pvp </div> : null}
+                  {partyData.tags && partyData.tags.pve ? <div className="pl-box-tag"> #pve </div> : null}
+                  {partyData.tags && partyData.tags.noob ? <div className="pl-box-tag"> #noob </div> : null}
+                  {partyData.tags && partyData.tags.casual ? <div className="pl-box-tag"> #casual </div> : null}
+                  {partyData.tags && partyData.tags.comp ? <div className="pl-box-tag">#comp </div> : null}
+                  {partyData.tags && partyData.tags.farm ? <div className="pl-box-tag"> #farm </div> : null}
+                  {partyData.tags && partyData.tags.exp ? <div className="pl-box-tag"> #exp </div> : null}
+                </div>
+                <div className="title-block"></div>
               </div>
-              <div className="party-list-party-players">
-                <div className="party-list-party-players-box">
-                  <span>{partyData.size - partyData.users.length}</span>
-                  <img src="/img/member50x50.png" alt=""/>
-                  <span className="party-list-party-players-small">need</span>
+              <div className="party-list-game-info">
+                <div className="party-list-party-players">
+                  <div className="party-list-party-players-box">
+                    <div className="party-player-box-title">NEED</div>
+                    <div className="party-player-box-info">
+                      <div className="party-player-box-number">{partyData.size - partyData.users.length}</div>
+                      <div className="blocker"></div>
+                      <div className="party-player-box-art"><img src="/img/member50x50.png" alt=""/></div>
+                    </div>
+                  </div>
+                  <div className="party-list-party-players-box">
+                    <div className="party-player-box-title">MAX</div>
+                    <div className="party-player-box-info">
+                      <div className="party-player-box-number">{partyData.size}</div>
+                      <div className="blocker"></div>
+                      <div className="party-player-box-art"><img src="/img/party50x50.png" alt=""/></div>
+                    </div>
+                  </div>
                 </div>
-                <div className="party-list-party-players-box">
-                  <span>{partyData.size}</span>
-                  <img src="/img/party50x50.png" alt=""/>
-                  <span className="party-list-party-players-small">max</span>
-                </div>
-              </div>
-              <div className="party-list-party-other">
-                <div className="party-list-party-other-time">
-                  <p>{partyData.startTime}</p>
-                </div>
-                <div className="party-list-party-other-time">
-                  <p>{partyData.endTime}</p>
+                <div className="party-list-party-other">
+                  <div className="party-list-party-other-time">
+                    <div className="party-list-time-title">START</div>
+                    <div className="party-list-time-info">{partyData.startTime}</div>
+                  </div>
+                  <div className="party-list-party-other-time">
+                    <div className="party-list-time-title">END</div>
+                    <div className="party-list-time-info">{partyData.endTime}</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -195,8 +215,8 @@ class PartyList extends React.Component {
           /> : null }
       </div>
 
-    )
-  }
-}
+        )
+        }
+        }
 
-export default PartyList;
+        export default PartyList;

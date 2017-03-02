@@ -12,7 +12,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 80%;
   margin-bottom: 1em;
 }
 
@@ -94,7 +94,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
+  width: 80%;
 }
 
 /*.party-compose-tag>span {
@@ -110,209 +110,233 @@
 }*/
 
 .party-tag-pvp {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-pvp-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-pve {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-pve-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-exp {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-exp-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-farm {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-farm-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-pro {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-pro-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-noob {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-noob-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-comp {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-comp-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-casual {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
   height: 40px;
-  color: white;
-  background-color: dodgerblue;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
 }
 
 .party-tag-casual-pressed {
-  margin: 0.5em;
-  padding: 0.25em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17.5%;
-  height: 40px;
-  color: white;
+  padding: 0.75em;
   background-color: dodgerblue;
-  opacity: 0.25;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: black;
+  border: 1px solid dodgerblue;
 }
 
 .party-compose-preview {
   margin: 2em 0em;
   color: white;
-  width: 85%;
+  width: 80%;
   border: 1px solid white;
   text-align: center;
   display: flex;
@@ -326,6 +350,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 80%;
   height: 30%
 }
 
@@ -333,7 +358,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 85%;
+  width: 80%;
   height: 35%;
 }
 
@@ -355,15 +380,17 @@
 }
 
 span.party-compose-decision-confirm {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5em;
-  background-color: green;
-  width: 25%;
-  height: 50px;
-  color: white;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: green;
+  border: 1px solid green;
   /*background: #008a00;
   background: -moz-linear-gradient(-15deg, #008a00 70%, #20d820 73%, #008a00 100%);
   background: -webkit-linear-gradient(-15deg, #008a00 70%,#20d820 73%,#008a00 100%);
@@ -372,15 +399,17 @@ span.party-compose-decision-confirm {
 }
 
 span.party-compose-decision-cancel {
-  margin: 0em 1em;
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5em;
-  background-color: red;
-  height: 50px;
-  width: 25%;
-  color: white;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: red;
+  border: 1px solid red;
   /*background: #ff0000;
   background: -moz-linear-gradient(-25deg, #ff0000 63%, #FF2121 64%, #ff2323 100%);
   background: -webkit-linear-gradient(-25deg, #ff0000 63%,#FF2121 64%,#ff2323 100%);
@@ -389,13 +418,28 @@ span.party-compose-decision-cancel {
 }
 
 span.party-compose-decision-delete {
-  margin: 0em 1em;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75em;
+  background-color: none;
+  font-size: 1.1em;
+  width: 120px;
+  height: 40px;
+  color: red;
+  border: 1px solid red;
+}
+
+.party-view-decision-start {
+  margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5em;
-  background-color: red;
-  height: 50px;
-  width: 25%;
-  color: white;
+  background-color: none;
+  width: 85px;
+  height: 40px;
+  color: green;
+  border: 1px solid green;
 }

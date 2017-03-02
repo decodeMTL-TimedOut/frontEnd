@@ -15,6 +15,13 @@
   box-sizing: border-box;
 }
 
+.search-bar-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-bar-input{
   width: 95%;
   display: flex;
@@ -60,6 +67,25 @@
 }
 
 .search-bar-button img {
+  margin-left: 0.5em;
   height: 30px;
-  width: 30px;
+  width: 20px;
+}
+
+.search-bar-break {
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2px;
+  position: fixed;
+  top: 70px;
+  background: -moz-linear-gradient(left, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.75) 25%, rgba(255,255,255,0.75) 75%, rgba(255,255,255,0.25) 100%);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.75) 25%,rgba(255,255,255,0.75) 75%,rgba(255,255,255,0.25) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0.25) 10%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.75) 50%,rgba(255,255,255,0.25) 90%);
+  /*margin: 1em 0em;*/
+  opacity: 0.5;
+  /*border: 1px solid red;*/
 }

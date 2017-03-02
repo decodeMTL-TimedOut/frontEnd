@@ -22,8 +22,8 @@ class PartyMember extends React.Component {
     return(
       <div className="party-member-list">
         <div className="party-member-info">
-          <div className="party-member-info-role"></div>
-          <div className="party-member-info-name">{memberData.userId}</div>
+          {/* <div className="party-member-info-role"></div> */}
+          <div className="party-member-info-name">{memberData.username}</div>
           <div className="party-member-remove">
             { isLeader && this.props.leaderId !== memberData.userId ?
               <img src="/img/remove50x50.png" alt="" onClick={(event) =>{ this.handleClickRemove_Member(event, memberData )}}/> : null }

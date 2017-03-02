@@ -207,18 +207,23 @@ class Party extends React.Component {
     return (
       <div>
         <div className="party-view">
-          <span>THE VIEW PARTY PAGE</span>
-          <p>BASIC STATS</p>
+          <div className="party-view-box-content-title">{partyData.partyName}</div>
+          <div className="party-view-box-content-title-tags">
+            {partyData.tags && partyData.tags.pvp ? <div className="box-tag"> #pvp </div> : null}
+            {partyData.tags && partyData.tags.pve ? <div className="box-tag"> #pve </div> : null}
+            {partyData.tags && partyData.tags.farm ? <div className="box-tag"> #farm </div> : null}
+            {partyData.tags && partyData.tags.noob ? <div className="box-tag"> #noob </div> : null}
+            {partyData.tags && partyData.tags.casual ? <div className="box-tag"> #casual </div> : null}
+            {partyData.tags && partyData.tags.comp ? <div className="box-tag">#comp </div> : null}
+            {partyData.tags && partyData.tags.farm ? <div className="box-tag"> #farm </div> : null}
+            {partyData.tags && partyData.tags.exp ? <div className="box-tag"> #exp </div> : null}
+          </div>
+          <div className="party-view-users-breaker"></div>
           <div className="party-view-info">
-            <div className="party-view-info-title">
-              <div className="party-view-box-title">TITLE</div>
-              <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">{partyData.partyName}</div>
-            </div>
             <div className="party-view-info-size">
               <div className="party-view-box-title">PARTY SIZE</div>
               <span className="party-view-breaker"></span>
-              <div className="party-view-box-content">{partyData.size}</div>
+              <div className="party-view-box-content">{partyData.size} PLAYERS</div>
             </div>
             <div className="party-view-info-time">
               <div className="party-view-box-title">START TIME</div>
@@ -232,8 +237,8 @@ class Party extends React.Component {
             </div>
           </div>
           <div className="party-view-users">
-            <span>PARTY MEMBERS</span>
-            <span className="party-view-users-breaker"></span>
+            <div className="party-view-users-title">PARTY MEMBERS</div>
+            <div className="party-view-users-breaker"></div>
             {partyData.users ? partyData.users.map((partyData) => <PartyMember
               leaderId={this.props.leaderId()}
               isLeader={isLeader}

@@ -255,7 +255,7 @@ class Create extends React.Component {
 
     var gameTitle = this.state.currentInputTitle;
     var tagsPressed = this.state.pvpValue + this.state.pveValue + this.state.expValue + this.state.farmValue + this.state.proValue + this.state.noobValue + this.state.compValue + this.state.casualValue;
-    // var gameName = gameTitle + " " + tagsPressed;
+    var gameName = gameTitle + " " + tagsPressed;
     var tagPvp = "party-tag-pvp" + (this.state.pvp ? "-pressed" : '');
     var tagPve = "party-tag-pve" + (this.state.pve ? "-pressed" : '');
     var tagExp = "party-tag-exp" + (this.state.exp ? "-pressed" : '');
@@ -268,7 +268,7 @@ class Create extends React.Component {
     return (
     <div className="party-compose">
       <div className="party-compose-base">
-        <p>Create Party</p>
+        {/* <p>Create Party</p> */}
         <div className="party-compose-base-title">
           <p>Title</p>
           <input type="text" placeholder="Enter your game name" onInput={this.handleInput_Title.bind(this)} value={this.state.currentInputTitle}/>

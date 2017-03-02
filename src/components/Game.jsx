@@ -101,20 +101,23 @@ class Game extends React.Component {
           <div className="game-page-information-art">
             <img src={this.state.gamedata.art} alt=""/>
           </div>
-
-          <div className="game-page-information-description">
-            <div className="game-page-information-description-title">
-              {this.state.gamedata.gameName}
+          <div className="game-page-information-right">
+            <div className="game-page-information-description">
+              <div className="game-page-information-description-title">
+                {this.state.gamedata.gameName}
+              </div>
+              <div className="game-page-line-breaker"></div>
+              <div className="game-page-information-description-platform">
+                {this.state.gamedata.platform}
+              </div>
+              <div className="game-page-information-description-info">
+                {this.state.gamedata.description}
+              </div>
             </div>
-            <div className="game-page-information-description-platform">
-              {this.state.gamedata.platform}
-            </div>
-            <div className="game-page-information-description-info">
-              {this.state.gamedata.description}
+            <div className="game-page-information-button-area">
+              <div className={className_Create} onClick={this.handleClick.bind(this)}><img src="/img/create-Plus.png" alt=""/></div>
             </div>
           </div>
-          <div className={className_Create} onClick={this.handleClick.bind(this)}>Create Party</div>
-
         </div>
         { !this.state.createFormClosed  ?
           <Create

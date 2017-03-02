@@ -18,6 +18,7 @@ class Login extends React.Component {
           </div>
           <span className="login-spacer"></span>
           <button className="login-button" onClick={auth.login.bind(this)}>LOGIN</button>
+          <div className="giantbomber">Powered by the GiantBomb API!!</div>
         </div>
       </ReactCSSTransitionGroup>
       // <div className="login-page">
