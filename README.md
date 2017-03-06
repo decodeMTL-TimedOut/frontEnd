@@ -12,9 +12,9 @@ FrontEnd technologies: React.js, HTML5, CSS3
 BackEnd technologies: Node.js, Express.js, MySQL
 
 ![Responsive Design](/public/img/multi-platform.png)
-![Desktop Main View](/img/desktop-main.png)
-![Desktop Game View](/img/desktop-game.png)
-![Mobile Main View](/img/mobile-main.png)
-![Mobile Game View](/img/mobile-game.png)
+![Desktop Main View](/public/img/desktop-main.png)
+![Desktop Game View](/public/img/desktop-game.png)
+![Mobile Main View](/public/img/mobile-main.png)
+![Mobile Game View](/public/img/mobile-game.png)
 
 [Demo Video](https://www.youtube.com/watch?v=E0Ioh-VSruM&feature=youtu.be)
