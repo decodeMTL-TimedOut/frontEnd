@@ -8,7 +8,7 @@ The UI was built with Javascript in React.  CSS was used to make it responsive a
 
 Our TimedOut API and database was built with Node, Express, and MySQL
 
-FrontEnd technologies: React.js, HTML5, CSS3
+FrontEnd technologies: React.js, HTML5, CSS3 <br/ >
 BackEnd technologies: Node.js, Express.js, MySQL
 
 ![Responsive Design](/public/img/multi-platform.png)
