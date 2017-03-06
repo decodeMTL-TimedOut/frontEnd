@@ -17,4 +17,5 @@ BackEnd technologies: Node.js, Express.js, MySQL
 ![Mobile Main View](/public/img/mobile-main.png)
 ![Mobile Game View](/public/img/mobile-game.png)
 
+A video of our demo can be found on the link below.
 [Demo Video](https://www.youtube.com/watch?v=E0Ioh-VSruM&feature=youtu.be)
