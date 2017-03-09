@@ -11,6 +11,8 @@ Our TimedOut API and database was built with Node, Express, and MySQL
 FrontEnd technologies: React.js, HTML5, CSS3 <br/ >
 BackEnd technologies: Node.js, Express.js, MySQL
 
+We would like to give credit to the GiantBomb API for making this project possible.
+
 ![Responsive Design](/public/img/multi-platform.png)
 ![Desktop Main View](/public/img/desktop-main.png)
 ![Desktop Game View](/public/img/desktop-game.png)
